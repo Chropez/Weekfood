@@ -1,0 +1,24 @@
+<header>
+	{{#link-to 'week.week-number' backToWeek}}
+	<h3>
+		<small><i class="fa fa-chevron-left"></i></small>
+		{{dayText}} <small>{{formattedDate}}</small>
+	</h3>
+	{{/link-to}}
+</header>
+
+<hr>
+
+{{#if dish}}
+	<p>
+		<span class="h3">{{dish.name}} </span>
+		<button class="btn btn-sm btn-default"><i class="fa fa-edit"></i> Change dish</button>
+	</p>
+
+	<img class="img-responsive" {{bind-attr src=model.dish.image}}>
+{{else}}
+	{{view "dishChooser"}}
+
+{{/if}}
+
+

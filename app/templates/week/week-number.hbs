@@ -1,0 +1,54 @@
+<header>
+	{{#link-to 'week.week-number' prevWeek}}<span 
+	class="h3"><i class="fa fa-chevron-left"></i></span>{{/link-to}}
+	
+	<span class="h1">
+		&nbsp;Week {{currentWeek}}
+	</span>
+
+	<small>
+	{{#link-to 'week.week-number' nextWeek}}<span 
+		class="h3"><i class="fa fa-chevron-right"></i></span>{{/link-to}}
+	</small>
+</header>
+
+<section>	
+	<ul id="week-list" class="list-group">
+		{{#each item in controller}}
+			<li class="list-group-item">
+				{{#link-to 'day.day-date' item.formattedDate classNames="row"}}
+					<div class="day-information item-container col-xs-3">
+						<div class="item-wrapper">
+							<div class="item-content">
+								<h5 class="day-text">{{item.dayText}}</h5>
+								<span class="day-date text-muted">{{item.formattedDate}}</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="day-dish-information item-container col-xs-5">
+						<div class="item-wrapper">
+						{{#if item.model.dish}}
+							<div class="item-content">
+								<strong>{{item.model.dish.name}}</strong>
+							</div>
+						{{else}}
+							<div class="item-content">
+								<span class="text-muted"><strong>No planned food</strong></span>
+							</div>
+						{{/if}}
+						</div>
+					</div>
+
+					<div class="day-dish-image item-container col-xs-4">
+						<div class="item-wrapper pull-right">
+							<div class="item-content">
+								<img class="img-responsive" {{bind-attr src=item.model.dish.image}}>
+							</div>
+						</div>
+					</div>
+				{{/link-to}}
+			</li>
+		{{/each}}
+	</ul>
+</section>

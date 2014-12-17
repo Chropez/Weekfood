@@ -1,3 +1,22 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<nav id="main-nav" class="nav navbar-default navbar-fixed-top">
+	<div class="nav-brand">
+		<h3>WeekFewd</h3>
+	</div>
+	<div>
+		<ul class="nav nav-pills nav-justified">
+			<li>
+				{{#link-to 'week'}}Plan{{/link-to}}
+			</li>
+			<li class="separator">&nbsp;</li>
+			<li>
+				{{#link-to 'dishes'}}Dishes{{/link-to}}
+			</li>
+		</ul>
 
-{{outlet}}
+	
+	
+	</div>
+</nav>
+
+{{liquid-outlet}}
+

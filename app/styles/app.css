@@ -1,3 +1,87 @@
 html, body {
-  margin: 20px;
+	
+	margin: 30px 5px 0;
 }
+
+#week-list li a{
+	color : inherit;
+	display: block;
+	height: 100%;
+}
+#week-list li a:hover{
+	text-decoration: none;
+}
+
+#week-list li.list-group-item{
+	padding: 0px 10px;
+	height: 60px;
+	overflow: hidden;
+}
+
+/**
+***
+***	 img
+**/
+#week-list .day-dish-image img {
+	position: relative;
+	top: -20px;
+}
+
+
+
+/**
+***
+***	 Info
+**/
+
+#week-list .day-information .day-text {
+	display: block;
+	margin-bottom: 0;
+}
+
+#week-list .day-information .day-date {
+	display: block;
+}
+
+
+
+/**
+***
+***	 General vertical align middle
+**/
+
+.item-container, .item-wrapper, .item-middle {
+	height: 100%;
+}
+.item-wrapper {
+	display: table;
+}
+.item-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+#chooseDishList .row {
+	height:100%;
+}
+#chooseDishList li.list-group-item {
+	height: 100px;
+	overflow: hidden;
+}
+
+#chooseDishList li.list-group-item .image .item-wrapper{
+	max-height: 80px;
+	overflow: hidden;
+	display:block;
+}
+
+
+
+#main-nav ul>li{
+	float:left;
+	width: 49%;
+}
+#main-nav ul>li.separator{
+	float:left;
+	width: 1%;
+}
+
