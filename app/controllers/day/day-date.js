@@ -4,21 +4,26 @@ import momentObj from 'moment';
 
 export default Ember.ObjectController.extend({
 
+	dishes: Ember.A(),
+
 	actions: {
-		chooseDish : function(dish){
-			var model = this.get('model');
-			model.set('dish', dish);
+		getDishes: function(){
+			this.set('dishes', this.store.findAll('dish'));
+		},
+
+		selectDish: function(dish){
+			var day = this.get('model');
+			day.set('dish', dish);
 			this.transitionTo('day.day-date', this.get('formattedDate'));
-			model.save();
-		}
+			day.save();
+		},
 	},
 
+	//Nicer looks of data
+	dayText: 		moment('model.date', 'dddd'),
+	formattedDate: 	moment('model.date', 'YYYY-MM-DD'),
 
-	//Nice looks of data
-	dayText: moment('model.date', 'dddd'),
-	formattedDate: moment('model.date', 'YYYY-MM-DD'),
-
-	backToWeek : function(){
-		return momentObj(this.get('formattedDate')).week();
-	}.property('formattedDate')
+	//Back Button
+	backWeek: function(){ return momentObj(this.get('formattedDate')).isoWeek() ; }.property('formattedDate'),
+	backYear: function() { return momentObj(this.get('formattedDate')).weekYear() ; }.property('formattedDate')
 });

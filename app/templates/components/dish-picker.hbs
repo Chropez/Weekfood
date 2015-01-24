@@ -1,0 +1,20 @@
+{{#unless showDishList}}
+	<button {{bind-attr class=btnClassNames}} {{action "getDishes"}}>
+		{{yield}}
+	</button>
+{{else}}
+	<ul>
+	{{#each dish in dishes}}
+		<li {{action "selectDish" dish}}>
+			{{dish.name}}
+		</li>
+
+	{{/each}}
+	</ul>
+	<div>
+		<button {{action "hideDishList"}} class="btn btn-link">
+			Avbryt
+		</button>
+	</div>
+{{/unless}}
+

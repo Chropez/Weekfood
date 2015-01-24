@@ -2,12 +2,44 @@ module.exports = function(app) {
   var express = require('express');
   var dishesRouter = express.Router();
 
-
   dishesRouter.get('/', function(req, res) {
     res.send({"dishes":DISHES});
   });
+
+  dishesRouter.post('/', function(req, res) {
+    res.status(201).end();
+  });
+
+  dishesRouter.get('/:id', function(req, res) {
+    var id = req.params.id;
+    var dishes = DISHES;
+
+    var dish;
+    for(var i = 0 ; i < dishes.length ; i ++){
+      if(dishes[i].id == id ) {
+        dish = dishes[i];
+        break;
+      }
+    }
+
+    res.send({"dishes":dish});
+  });
+
+  dishesRouter.put('/:id', function(req, res) {
+    res.send({
+      'dishes': {
+        id: req.params.id
+      }
+    });
+  });
+
+  dishesRouter.delete('/:id', function(req, res) {
+    res.status(204).end();
+  });
+
   app.use('/api/dishes', dishesRouter);
 };
+
 
 var DISHES = [
 { 	
@@ -74,4 +106,3 @@ var DISHES = [
 	}
 ];
 
-module.exports.dishes = DISHES;

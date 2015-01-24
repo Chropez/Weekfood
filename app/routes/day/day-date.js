@@ -13,5 +13,10 @@ export default Ember.Route.extend({
 			}
 		});
 
+	},
+
+	serialize: function(model, params){
+		var day_date = params[0];
+		return { day_date : moment(model.get('date')).format('YYYY-MM-DD') };
 	}
 });
