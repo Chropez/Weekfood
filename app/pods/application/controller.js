@@ -11,8 +11,9 @@ export default Ember.Controller.extend({
 
 	planTabIsActive: function(){
 		var currentPath = this.get('currentPath');
-		if(currentPath==='plan.week' || currentPath==='days')
+		if(currentPath==='plan.week' || currentPath==='days') {
 			return true;
+		}
 		return false;
 	}.property('currentPath')
 });

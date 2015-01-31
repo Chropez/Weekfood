@@ -1,11 +1,8 @@
 export default function(){
-
-
 	this.transition(
-		this.fromRoute('week.week-number'),
-		this.toRoute('day.day-number'),
-		this.use('toRight'),
-		this.reverse('toLeft')
+		this.fromRoute('plan.week'),
+		this.toRoute('days'),
+		this.use('toLeft'),
+		this.reverse('toRight')
 	);
-
 }
