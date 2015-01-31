@@ -1,0 +1,46 @@
+<header class="bar bar-nav">
+  <h1 class="title">Weekfood</h1>
+</header>
+
+<input type="text" placeholder="Full name">
+<button class="btn btn-primary btn-block">Awesome super login</button>
+
+{{!-- Old bootcards layout }}
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			{{#link-to 'application' classNames="navbar-brand"}}
+				Weekfood
+			{{/link-to}}
+
+			<button type="button" class="btn btn-default btn-back pull-left hidden" onclick="history.back()">
+				<i class="fa fa-lg fa-chevron-left"></i>
+				<span>Back</span>
+			</button>   
+		</div>
+	</div>
+</div>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="container">
+		<div class="btn-group">
+			{{#link-to 'plan' classNames="btn btn-default" }}
+			<i class="fa fa-2x fa-calendar"></i>
+			Plan
+			{{/link-to}}
+
+			{{#link-to 'dishes' classNames="btn btn-default"}}
+			<i class="fa fa-2x fa-book"></i>
+			Cookbook
+			{{/link-to}}
+		</div>
+		<div class="bootcards-desktop-footer clearfix">
+			<p class="pull-left">Text for desktop footer goes here</p>
+			<p class="pull-left">More text for desktop footer goes here</p>
+		</div>
+	</div>
+</nav>
+{{/!--}}
+
+

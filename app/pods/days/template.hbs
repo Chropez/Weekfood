@@ -1,0 +1,21 @@
+<div>
+	<header class="bar bar-nav">
+		<h1 class="title">{{dayText}} - {{formattedDate}}</h1>
+		{{#link-to 'plan.week' backYear backWeek classNames="icon icon-left-nav pull-left"}}{{/link-to}}
+	</header>
+	
+	<div class="container">
+		{{#if dish}}
+			<h3>{{dish.name}} </h3>
+				<button class="btn btn-sm btn-default"><i class="fa fa-edit"></i> Change dish</button>
+			</p>
+			<img class="img-responsive" {{bind-attr src=model.dish.image}}>
+		{{else}}
+
+			{{#pick-dish onGetDishes="getDishes" onSelectDish="selectDish" dishes=dishes btnClassNames="btn btn-primary"}}
+				<i class="fa fa-plus"></i> Add Dish
+			{{/pick-dish}}
+
+		{{/if}}
+	</div>
+</div>

@@ -6,6 +6,16 @@ module.exports = function(environment) {
     podModulePrefix: 'weekfood/pods',
     usePodsByDefault: true,
 
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' *",
+      'font-src': "'self' *",
+      'connect-src': "'self' *",
+      'img-src': "'self' *",
+      'style-src': "'self' 'unsafe-inline' *",
+      'media-src': "'self'"
+    },
+
     modulePrefix: 'weekfood',
     environment: environment,
     baseURL: '/',

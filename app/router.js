@@ -6,20 +6,14 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('week', { path: 'year/:year_number/week' }, function(){
-  	this.route('index', { path: '/'} );	
-  	this.route('week-number', { path : ':week_number'});	
-  });
-  this.resource('day', function(){
-  	this.route('day-date', {path: ':day_date'}, function(){
-      this.route('choose-dish'  );
-    });	
+  
+  this.route("plan", function() {
+      this.route("week", { path: ':year/week/:week'});  
   });
 
+  this.route("days", { path: 'days/:date' }) ;
+
   this.route('dishes');
-  this.resource('dish', { path: 'dishes/:dish_id' });
-  this.route('plan');
-  this.resource("users", function() {});
 });
 
 

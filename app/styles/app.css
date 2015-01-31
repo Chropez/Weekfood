@@ -1,87 +1,66 @@
-html, body {
-	
-	margin: 30px 5px 0;
+.icon.fa {
+	font-family: 'FontAwesome';
 }
 
-#week-list li a{
-	color : inherit;
-	display: block;
-	height: 100%;
-}
-#week-list li a:hover{
-	text-decoration: none;
-}
-
-#week-list li.list-group-item{
-	padding: 0px 10px;
-	height: 60px;
-	overflow: hidden;
-}
-
-/**
-***
-***	 img
-**/
-#week-list .day-dish-image img {
+.bar-nav-link {
 	position: relative;
-	top: -20px;
+}
+
+.bar-nav-link .link-text {
+	display: inline-block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.bar-nav-link .link-text.link-text-small {
+	font-size: 75%;
+	line-height: 12px;
+}
+
+.page-with-bottom-nav .content {
+	padding-bottom:50px;
 }
 
 
-
-/**
-***
-***	 Info
-**/
-
-#week-list .day-information .day-text {
-	display: block;
-	margin-bottom: 0;
-}
-
-#week-list .day-information .day-date {
-	display: block;
-}
-
-
-
-/**
-***
-***	 General vertical align middle
-**/
-
-.item-container, .item-wrapper, .item-middle {
-	height: 100%;
-}
-.item-wrapper {
+.media-object-wrapper  {
+	height: 50px; width:30%; margin-right:15px;
 	display: table;
 }
-.item-content {
+
+
+.media-object-wrapper .media-object {
 	display: table-cell;
 	vertical-align: middle;
-}
-#chooseDishList .row {
-	height:100%;
-}
-#chooseDishList li.list-group-item {
-	height: 100px;
-	overflow: hidden;
+	text-align: center;
 }
 
-#chooseDishList li.list-group-item .image .item-wrapper{
-	max-height: 80px;
-	overflow: hidden;
-	display:block;
+.media-object-wrapper .media-object img {
+	max-height:50px; 
+	max-width:100%;
+	border-radius: 10px;
 }
 
 
-
-#main-nav ul>li{
-	float:left;
-	width: 49%;
+.media-object-wrapper .media-object.no-image > div{
+	color: rgb(218, 210, 210);
 }
-#main-nav ul>li.separator{
-	float:left;
-	width: 1%;
+/*
+.media-object-container {
+
 }
 
+.media-object.no-image {
+	display: table;
+	border-radius: 20px;
+	border: 1px solid rgb(218, 210, 210);
+	width:55px;
+	height:50px;
+	color: rgb(218, 210, 210);
+}
+
+.media-object.no-image .media-object-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+*/
