@@ -1,20 +1,47 @@
-{{#unless showDishList}}
-	<button {{bind-attr class=btnClassNames}} {{action "getDishes"}}>
-		{{yield}}
-	</button>
-{{else}}
-	<ul>
-	{{#each dish in dishes}}
-		<li {{action "selectDish" dish}}>
-			{{dish.name}}
-		</li>
+<button {{bind-attr class=btnClassNames}} {{action "getDishes"}}>
+	{{yield}}
+</button>
 
-	{{/each}}
-	</ul>
-	<div>
-		<button {{action "hideDishList"}} class="btn btn-link">
-			Avbryt
-		</button>
-	</div>
-{{/unless}}
+<div {{bind-attr class="showDishList:active :modal"}}>
+  <header class="bar bar-nav">
+    <a class="icon icon-close pull-right" style="margin-right:10px" {{action "hideDishList"}}></a>
+    <h1 class="title">Choose Dish</h1>
+  </header>
+
+  <div class="content">
+    <div class="card">
+	
+		<ul class="table-view">
+
+			{{#each dish in dishes}}
+			  <li class="table-view-cell media"  {{action "selectDish" dish}}>
+			    <a class="naavigate-right">
+			    	<div class="pull-left media-object-wrapper">
+						{{#if dish.image}}
+							<div class="media-object">
+								<img {{bind-attr src=dish.image}}>
+							</div>
+						{{else}}
+							<div class="media-object">
+								<img src="/img/food-default.png">
+							</div>
+						{{/if}}
+					</div>
+			      <div class="media-body">
+			        {{dish.name}}
+			        
+		        	{{#if dish.description}}
+				        <p>
+				        	{{dish.description}}
+				        </p>
+		        	{{/if}}
+			      </div>
+			    </a>
+			  </li>
+			{{/each}}
+		</ul>
+    </div>
+  </div>
+</div>
+
 

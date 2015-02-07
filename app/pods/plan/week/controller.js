@@ -2,9 +2,11 @@ import Ember from 'ember';
 import moment from 'moment';
 
 export default Ember.ArrayController.extend({
+	// Sorting
 	sortProperties: ['date'],
 	sortAscending: true, 
 
+	// Items
 	itemController: 'days',
 	week : null, 
 	year : null,

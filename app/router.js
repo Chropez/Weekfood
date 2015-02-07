@@ -13,7 +13,9 @@ Router.map(function() {
 
   this.route("days", { path: 'days/:date' }) ;
 
-  this.route('dishes');
+  this.route('dishes', function(){
+  	this.route("new");
+  });
 });
 
 

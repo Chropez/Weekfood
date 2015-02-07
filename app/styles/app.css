@@ -44,23 +44,12 @@
 .media-object-wrapper .media-object.no-image > div{
 	color: rgb(218, 210, 210);
 }
-/*
-.media-object-container {
 
+#page-days .dish-image {
+	width: 100%;
+	margin-top: 20px;
 }
 
-.media-object.no-image {
-	display: table;
-	border-radius: 20px;
-	border: 1px solid rgb(218, 210, 210);
-	width:55px;
-	height:50px;
-	color: rgb(218, 210, 210);
+.img-rounded {
+	border-radius: 10px;
 }
-
-.media-object.no-image .media-object-wrapper {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
-*/

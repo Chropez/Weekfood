@@ -52,6 +52,7 @@ export default Ember.Route.extend({
 			modelArray.forEach(function(model){
 				if(model.get('isNew')){
 					model.destroyRecord();	
+					//Change to store.unloadRecord ?
 				}
 				
 			});

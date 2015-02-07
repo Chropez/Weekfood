@@ -1,8 +1,8 @@
 export default function(){
-	this.transition(
-		this.fromRoute('plan.week'),
-		this.toRoute('days'),
-		this.use('toLeft'),
-		this.reverse('toRight')
-	);
+  this.transition(
+    this.fromRoute('dishes.index'),
+    this.toRoute('days.index'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
 }

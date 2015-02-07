@@ -1,0 +1,26 @@
+<header class="bar bar-nav">
+	<h1 class="title">
+		New Dish
+	</h1>
+	{{#link-to 'dishes.new' classNames="icon icon-left pull-left"}}{{/link-to}}
+</header>
+
+<div class="content">
+	<div class="card">	
+		<form class="input-group">
+			<div class="input-row">
+				<label>Full name</label>
+				<input type="text" placeholder="Mister Ratchet">
+			</div>
+			<div class="input-row">
+				<label>Email</label>
+				<input type="email" placeholder="ratchetframework@gmail.com">
+			</div>
+			<div class="input">
+				<textarea  rows="5" placeholder="Description"></textarea>
+			</div>
+		</form>
+	</div>
+</div>
+
+{{outlet}}

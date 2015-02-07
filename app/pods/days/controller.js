@@ -2,28 +2,37 @@ import Ember from 'ember';
 import {moment} from 'ember-moment/computed';
 import momentjs from 'moment';
 
-export default Ember.ObjectController.extend({
-
-	dishes: Ember.A(),
+export default Ember.Controller.extend({
 
 	actions: {
 		getDishes: function(){
-			this.set('dishes', this.store.findAll('dish'));
+			var dishes = this.get('dishes');
+			
+			if(dishes.length<1){
+				this.set('dishes', this.store.findAll('dish'));
+			}
+				
 		},
 
 		selectDish: function(dish){
-			var day = this.get('model');
+			var day = this.get('day');
+			var _this = this;
 			day.set('dish', dish);
-			this.transitionTo('day.day-date', this.get('formattedDate'));
-			day.save();
-		},
+			day.save().then(function(day){
+				_this.set('day', day);
+			});
+		},	
 	},
 
+	//Properties
+	dishes: Ember.A(),
+	day: Ember.computed.alias('model'), //set by route
+
 	//Nicer looks of data
-	dayText: 		moment('model.date', 'dddd'),
-	formattedDate: 	moment('model.date', 'YYYY-MM-DD'),
+	dayText: 		moment('day.date', 'dddd'),
+	formattedDate: 	moment('day.date', 'YYYY-MM-DD'),
 
 	//Back Button
-	backWeek: function(){ return momentjs(this.get('formattedDate')).isoWeek() ; }.property('formattedDate'),
-	backYear: function() { return momentjs(this.get('formattedDate')).weekYear() ; }.property('formattedDate')
+	backWeek: function(){ return momentjs(this.get('formattedDate'), 'YYYY-MM-DD').isoWeek() ; }.property('formattedDate'),
+	backYear: function() { return momentjs(this.get('formattedDate'), 'YYYY-MM-DD').weekYear() ; }.property('formattedDate')
 });

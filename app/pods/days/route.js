@@ -2,7 +2,7 @@ import Ember from 'ember';
 import moment from 'moment';
 
 export default Ember.Route.extend({
-	model : function(params){
+	model: function(params){
 		var _this = this;
 		var dayDate = params.date;
 		return _this.store.find('day', { 'date': dayDate }).then(function(days){
