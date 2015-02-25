@@ -1,3 +1,10 @@
+.newdish-description {
+	resize:none; 
+	float:right; 
+	width:65%;
+}
+
+
 .icon.fa {
 	font-family: 'FontAwesome';
 }
@@ -21,6 +28,9 @@
 	padding-bottom:50px;
 }
 
+.liquid-container >.liquid-child >div {
+	min-height: 1000px;
+}
 
 .media-object-wrapper  {
 	height: 50px; width:30%; margin-right:15px;
@@ -52,4 +62,11 @@
 
 .img-rounded {
 	border-radius: 10px;
+}
+
+.page-wrapper {
+	background-color: #efeff4;
+}
+.container {
+	padding: 50px 0;
 }

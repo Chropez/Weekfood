@@ -1,34 +1,43 @@
-<header class="bar bar-nav">
-	<h1 class="title">
-		Cookbook	
-	</h1>
-	{{#link-to 'dishes.new' classNames="icon icon-plus pull-right"}}{{/link-to}}
-</header>
+<div>
+	<header class="bar bar-nav">
+		<h1 class="title">
+			Cookbook	
+		</h1>
+		{{#link-to 'dishes.new' classNames="icon icon-plus pull-right"}}{{/link-to}}
+	</header>
+	
 
-<div class="content" style="">
-	<div class="card" id="days-list">
-		<ul class="table-view">
-			{{#each dish in model}}
-			<li class="table-view-cell media">
-				{{#link-to 'dishes' classNames="navigate-right"}}	
-				<div class="pull-left media-object-wrapper">
-					{{#if dish.image}}
-					<div class="media-object ">
-						<img  {{bind-attr src=dish.image}}>
-					</div>
-					{{else}}
-					<div class="media-object ">
-						<img   src="/img/food-default.png">
-					</div>
-					{{/if}}
+	<div class="content" style="">
+		<div class="card" id="days-list">
+			{{#if model}}
+				<ul class="table-view">
+					{{#each dish in model}}
+					<li class="table-view-cell media">
+						{{#link-to 'dishes' classNames="navigate-right"}}	
+						<div class="pull-left media-object-wrapper">
+							{{#if dish.image}}
+							<div class="media-object ">
+								<img  {{bind-attr src=dish.image}}>
+							</div>
+							{{else}}
+							<div class="media-object ">
+								{{!--<img src="/img/food-default.png">}}{{/!--}}
+							</div>
+							{{/if}}
 
-				</div>
-				<div class="media-body">
-					{{dish.name}}
-				</div>
-				{{/link-to}}
-			</li>
-			{{/each}}
-		</ul>
-	</div>	
+						</div>
+						<div class="media-body">
+							{{dish.name}}
+						</div>
+						{{/link-to}}
+					</li>
+					{{/each}}
+				</ul>
+			{{else}}
+
+			No dish found... Add one!
+
+			{{/if}}
+		</div>	
+	</div>
 </div>

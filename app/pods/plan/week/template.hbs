@@ -20,7 +20,7 @@
 		<ul class="table-view">
 			{{#each day in controller}}
 				<li class="table-view-cell media">
-					{{#link-to 'days' day classNames="navigate-right"}}	
+					{{#link-to 'days' day.model classNames="navigate-right"}}	
 						<div class="pull-left media-object-wrapper">
 							{{#if day.model.dish}}
 								{{#if day.model.dish.image}}

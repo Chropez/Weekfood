@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 
 	showDishList : false,
 	dishes : null,
+	selectDish: null,
 
 
 	actions : {

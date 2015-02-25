@@ -3,45 +3,58 @@
 </button>
 
 <div {{bind-attr class="showDishList:active :modal"}}>
-  <header class="bar bar-nav">
-    <a class="icon icon-close pull-right" style="margin-right:10px" {{action "hideDishList"}}></a>
-    <h1 class="title">Choose Dish</h1>
-  </header>
+	<header class="bar bar-nav">
+		<a class="icon icon-close pull-right" style="margin-right:10px" {{action "hideDishList"}}></a>
+		<h1 class="title">Choose Dish</h1>
+	</header>
 
-  <div class="content">
-    <div class="card">
-	
-		<ul class="table-view">
+	<div class="content">
+		<div class="card">
 
-			{{#each dish in dishes}}
-			  <li class="table-view-cell media"  {{action "selectDish" dish}}>
-			    <a class="naavigate-right">
-			    	<div class="pull-left media-object-wrapper">
-						{{#if dish.image}}
+			<ul class="table-view">
+				{{#if selectedDish}}
+				<li class="table-view-cell media"  {{action "selectDish" null}}>
+					<a class="">
+						<div class="pull-left media-object-wrapper">
+							<div class="media-object">
+								<i class="fa fa-times" style="color:red"></i>
+							</div>
+						</div>
+						<div class="media-body" style="margin-top:15px;">
+							Remove dish
+						</div>
+					</a>
+				</li>
+				{{/if}}
+				{{#each dish in dishes}}
+				<li class="table-view-cell media"  {{action "selectDish" dish}}>
+					<a class="">
+						<div class="pull-left media-object-wrapper">
+							{{#if dish.image}}
 							<div class="media-object">
 								<img {{bind-attr src=dish.image}}>
 							</div>
-						{{else}}
+							{{else}}
 							<div class="media-object">
 								<img src="/img/food-default.png">
 							</div>
-						{{/if}}
-					</div>
-			      <div class="media-body">
-			        {{dish.name}}
-			        
-		        	{{#if dish.description}}
-				        <p>
-				        	{{dish.description}}
-				        </p>
-		        	{{/if}}
-			      </div>
-			    </a>
-			  </li>
-			{{/each}}
-		</ul>
-    </div>
-  </div>
+							{{/if}}
+						</div>
+						<div class="media-body">
+							{{dish.name}}
+
+							{{#if dish.description}}
+							<p>
+								{{dish.description}}
+							</p>
+							{{/if}}
+						</div>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
 </div>
 
 

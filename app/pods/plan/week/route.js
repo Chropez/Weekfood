@@ -13,6 +13,7 @@ export default Ember.Route.extend({
 			momentWeek 		= moment().weekYear(year).isoWeek(week),
 			daysOfTheWeek 	= Ember.A();
 
+/*
 		for(var i = 0 ; i < daysVisible ; i++){
 			var date = momentWeek.isoWeekday(i+startDay).format('YYYY-MM-DD');
 			daysOfTheWeek.pushObject(_this.store.find('day', { date : date }));
@@ -27,7 +28,7 @@ export default Ember.Route.extend({
 				}else{
 					modelWeek.pushObject(_this.store.createRecord('day', 
 						{ 
-							date: new Date(momentWeek.isoWeekday(index+startDay).format('YYYY-MM-DD')) ,
+							date: momentWeek.isoWeekday(index+startDay).format('YYYY-MM-DD'),
 							user: 'Luigi'
 						}
 					));
@@ -37,10 +38,36 @@ export default Ember.Route.extend({
 			return modelWeek;
 		});
 		return days;
+
+		*/
+
+		var store = this.store;
+
+		var allDays = store.find('day');
+//@todo filter on controller
+		return allDays.then(function(allDays){
+			var daysThisWeek = Ember.A();
+			for(var i = 0; i < daysVisible ; i++) {
+				var date = momentWeek.isoWeekday(i+startDay).format('YYYY-MM-DD');
+				var dayMatch = allDays.filterBy('date', date);
+				if(dayMatch!==undefined && dayMatch.length > 0) {
+					daysThisWeek.pushObject(dayMatch.objectAt(0));
+				}else {
+					daysThisWeek.pushObject(store.createRecord('day', { 
+						'date': date, 
+						'user': 'Luigi'
+					}));
+				}
+			}
+			return daysThisWeek;
+		});
+
 	},
 
 	setupController : function(controller, model, transition){
 		this._super(controller, model);
+
+
 
 		controller.set('year', transition.params['plan.week'].year); //gets the year from the week route
 		controller.set('week', transition.params['plan.week'].week);
@@ -48,14 +75,14 @@ export default Ember.Route.extend({
 
 	actions : {
 		willTransition : function() {
-			var modelArray = this.get('currentModel');
+			/*var modelArray = this.get('currentModel');
 			modelArray.forEach(function(model){
 				if(model.get('isNew')){
 					model.destroyRecord();	
 					//Change to store.unloadRecord ?
 				}
 				
-			});
+			});*/
 		}
 	}
 });
