@@ -28,10 +28,11 @@
 	padding-bottom:50px;
 }
 
-.liquid-container >.liquid-child >div {
+
+/*.liquid-container >.liquid-child >div {
 	min-height: 1000px;
 }
-
+*/
 .media-object-wrapper  {
 	height: 50px; width:30%; margin-right:15px;
 	display: table;
@@ -69,4 +70,64 @@
 }
 .container {
 	padding: 50px 0;
+}
+
+
+.wf-loading>div{
+	width: 200px;
+	margin: auto;
+}
+.wf-loading>div>svg{
+	width: 200px;
+}
+
+
+
+
+
+.content {
+  background-color: #efeff4;
+  &.has-footer {
+    padding-bottom: 45px;
+  }
+}
+
+.bar-nav {
+  background-color: #f7f7f7;
+}
+
+.table-view.has-header {
+  margin-top: 0px !important;
+}
+/*
+.table-view-cell.media img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}*/
+
+.card.padded {
+  padding: 20px;
+}
+
+.spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 }
