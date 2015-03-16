@@ -8,7 +8,7 @@ moduleFor('route:days', 'DaysRoute', {
   // needs: ['controller:foo']
 });
 
-test('it exists', function() {
+test('it exists', function(assert) {
   var route = this.subject();
-  ok(route);
+  assert.ok(route);
 });

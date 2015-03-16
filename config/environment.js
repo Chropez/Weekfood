@@ -2,21 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
-    firebase_instance: 'sizzling-fire-1482',
+    firebase: 'https://sizzling-fire-1482.firebaseio.com/',
+
     podModulePrefix: 'weekfood/pods',
-    usePodsByDefault: true,
-
-    contentSecurityPolicy: {
-      'default-src': "'none' ",
-      'script-src': "'self' 'unsafe-eval'  *",
-      'font-src': "'self' *",
-      'connect-src': "'self'  *",
-      'img-src': "'self'  *",
-      'style-src': "'self' 'unsafe-inline'  *",
-      'media-src': "'self'  *",
-      'frame-src': "'self'  * "
-    },
-
     modulePrefix: 'weekfood',
     environment: environment,
     baseURL: '/',

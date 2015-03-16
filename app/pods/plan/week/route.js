@@ -44,10 +44,7 @@ export default Ember.Route.extend({
 	// Param - year-string and week-string
 	// Returns Array of existing days this week
 	getWeekDays : function(){
-		var week 	 = this.week,
-			year 	 = this.year,
-
-			firstDay = this.getFirstDay(), 
+		var	firstDay = this.getFirstDay(), 
 			lastDay	 = this.getLastDay(), 
 			allDays  = this.store.all('day');
 
