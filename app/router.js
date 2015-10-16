@@ -6,17 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  
-  this.route("plan", function() {
-      this.route("week", { path: ':year/week/:week'});  
-  });
-
-  this.route("days", { path: 'days/:date' }) ;
-
-  this.route('dishes', function(){
-  	this.route("new");
-  });
 });
-
 
 export default Router;
