@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'weekfood',
+    podModulePrefix: 'weekfood/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
