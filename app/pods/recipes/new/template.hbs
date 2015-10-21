@@ -1,0 +1,21 @@
+{{#link-to "recipes"}}Go back{{/link-to}}
+
+<h2>New Recipe</h2>
+<form {{action "addRecipe" on="submit"}}>
+  <div>
+    <label for="">Name</label><br>
+    {{input type="text" value=name}}
+  </div>
+  <br>
+
+  <div>
+    <label for="">description</label><br>
+    {{input type="text" value=description}}
+  </div>
+  <br>
+  <div>
+    <button>Add Recipe</button>
+  </div>
+</form>
+
+{{outlet}}

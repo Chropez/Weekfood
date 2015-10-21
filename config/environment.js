@@ -5,6 +5,13 @@ module.exports = function(environment) {
     modulePrefix: 'weekfood',
     podModulePrefix: 'weekfood/pods',
     environment: environment,
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"
+    },
+    firebase: 'https://sizzling-fire-1482.firebaseio.com/',
+    torii: {
+      sessionServiceName: 'session'
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

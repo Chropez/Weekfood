@@ -1,0 +1,750 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"au",
+				"authenticatedRoute"
+			],
+			[
+				"set",
+				"getSettings"
+			],
+			[
+				"pro",
+				"promise"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"afterLog",
+				"_afterLoginEventQueue"
+			],
+			[
+				"load",
+				"loadingIcon"
+			],
+			[
+				"pos",
+				"position"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/router.js",
+			"settings":
+			{
+				"buffer_size": 441,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import Ember from 'ember';\n\nexport default Ember.Route.extend({\n  model(params) {\n    const year = params.year,\n          week = params.week;\n\n    console.log(`Year: ${year}, Week: ${week}`);\n    \n  }\n});\n",
+			"file": "app/pods/plan/week/route.js",
+			"file_size": 200,
+			"file_write_time": 130897959688351351,
+			"settings":
+			{
+				"buffer_size": 205,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 150.0,
+		"last_filter": "remov",
+		"selected_items":
+		[
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"inap",
+				"Package Control: Install Package"
+			],
+			[
+				"inspa",
+				"Package Control: Install Package"
+			],
+			[
+				"rePa",
+				"Package Control: Remove Package"
+			],
+			[
+				"removP",
+				"Package Control: Remove Package"
+			],
+			[
+				"inpa",
+				"Package Control: Install Package"
+			],
+			[
+				"rempac",
+				"Package Control: Remove Package"
+			],
+			[
+				"inpac",
+				"Package Control: Install Package"
+			],
+			[
+				"rempack",
+				"Package Control: Remove Package"
+			],
+			[
+				"ipac",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"in pac",
+				"Package Control: Install Package"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"inde",
+				"Indent XML"
+			],
+			[
+				"in pc",
+				"Package Control: Install Package"
+			],
+			[
+				"ss javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss javsc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"setsytax jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"setsy rub",
+				"Set Syntax: Ruby"
+			],
+			[
+				"syn rub",
+				"Set Syntax: Ruby"
+			],
+			[
+				"hbs",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"ss ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"e",
+				"Emmet: Expand Abbreviation"
+			],
+			[
+				"expand",
+				"Emmet: Expand Abbreviation"
+			],
+			[
+				"setSy",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"ss html",
+				"Set Syntax: HTML"
+			],
+			[
+				"syntax sh",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"syntax c#",
+				"Set Syntax: C#"
+			],
+			[
+				"set syn xml",
+				"Set Syntax: XML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"//EMBER-SERVER/ember-workspace/Weekfood/app",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/plan",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/plan/week",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/serializers"
+	],
+	"file_history":
+	[
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/models/user.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/plan/route.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/application/template.hbs",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/router.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/application/route.js",
+		"/C/Users/clopez/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/clopez/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"//EMBER-SERVER/ember-workspace/Weekfood/weekfood.sublime-project",
+		"//EMBER-SERVER/ember-workspace/Weekfood/.sublime-project",
+		"/C/Workspace/Jpn/Development/Main/Documents/bootstrap-datepicker-changes.txt",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipes/new/template.hbs",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipes/index/template.hbs",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/models/recipe.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipes/template.hbs",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipes/new/controller.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipes/controller.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipes/new/route.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/torii-adapters/application.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipes/route.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/.gitignore",
+		"//EMBER-SERVER/ember-workspace/WeekfoodOld/app/pods/dishes/new/template.hbs",
+		"//EMBER-SERVER/ember-workspace/Weekfood/.travis.yml",
+		"//EMBER-SERVER/ember-workspace/Weekfood/public/crossdomain.xml",
+		"//EMBER-SERVER/ember-workspace/Weekfood/config/environment.js",
+		"//EMBER-SERVER/ember-workspace/luloPhotos/app/router.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/serializers/user.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/models/week.js",
+		"/Y/Weekfood/app/router.js",
+		"/Y/Weekfood/app/pods/application/template.hbs",
+		"/Y/Weekfood/app/pods/recipes/template.hbs",
+		"/Y/Weekfood/podsOld/dishes/template.hbs",
+		"/Y/Weekfood/app/pods/login/template.hbs",
+		"/Y/Weekfood/node_modules/ember-export-application-global/index.js",
+		"/Y/Weekfood/app/pods/application/route.js",
+		"/Y/Weekfood/config/environment.js",
+		"/Y/Weekfood/app/styles/app.css",
+		"/Y/Weekfood/app/torii-adapters/application.js",
+		"/Y/Weekfood/app/models/recipe.js",
+		"/Y/Weekfood/app/transitions.js",
+		"/Y/Weekfood/app/models/dish.js",
+		"/C/Program Files/Git/etc/install-options.txt",
+		"/D/Private/.gitconfig",
+		"/Y/Weekfood/.gitattributes",
+		"/Y/Weekfood/.ember-cli",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/pods/recipe/model.js",
+		"//EMBER-SERVER/ember-workspace/Weekfood/package.json",
+		"//EMBER-SERVER/ember-workspace/Weekfood/.ember-cli",
+		"//EMBER-SERVER/ember-workspace/Weekfood/app/templates/application.hbs",
+		"//EMBER-SERVER/ember-workspace/Weekfood/bower.json",
+		"//EMBER-SERVER/ember-workspace/Weekfood/.editorconfig",
+		"//EMBER-SERVER/ember-workspace/luloPhotos/package.json",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/vaccination_TEST_197705232382.xml",
+		"/C/temp/Jpn.Service.WcfService/Jpn.Service.WcfService.SetParameters.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/vaccination_TEST_200108188799.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/vaccination_v1_TEST_197705232382.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/vaccination_v1_empty.xml",
+		"/C/Users/clopez/AppData/Local/Temp/Temp1_Jpn.Web.Client.zip/Content/C_C/Builds/1/JPN/CreateReleaseExternTest/Sources/JPN/Jpn.Web.Client/obj/Release/Package/PackageTmp/Web.config",
+		"/C/temp/CreateReleaseExternTest_20151015.3/Jpn.Web.Client/Jpn.Web.Client.SetParameters.xml",
+		"/C/temp/CreateReleaseExternTest_20151013.2/Jpn.Web.Client/Jpn.Web.Client.SetParameters.xml",
+		"/C/temp/CreateReleaseExternTest_20151015.2/Jpn.Web.Client/Jpn.Web.Client.SetParameters.xml",
+		"/C/Users/clopez/AppData/Local/Temp/Temp1_Jpn.Web.Client.zip/Content/C_C/Builds/1/JPN/CreateReleaseLulNMT_Branch/Sources/JPN/Jpn.Web.Client/obj/Release/Package/PackageTmp/Web.config",
+		"/C/temp/xmldiff/Web.config",
+		"/C/Users/clopez/Desktop/getMedicationHistoryResponse.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Schemas/Vad är vad.txt",
+		"//EMBER-SERVER/ember-workspace/luloPhotos/app/templates/application.hbs",
+		"/D/Private/Vagrant/Vagrantfile",
+		"//EMBER-SERVER/ember-workspace/luloPhotos/ember-cli-build.js",
+		"//EMBER-SERVER/ember-workspace/luloPhotos/README.md",
+		"//EMBER-SERVER/ember-workspace/luloPhotos/bower.json",
+		"//EMBER-SERVER/ember-workspace/luloPhotos/.ember-cli",
+		"/C/Workspace/Jpn/Development/.tfignore",
+		"/C/temp/IIS/Jpn.Admin.Client/Jpn.Admin.Client.SetParameters.LulPROD.xml",
+		"/D/Private/Vagrant/provision2-user.sh",
+		"/D/Private/Vagrant/provision1-sudo.sh",
+		"/D/Private/Vagrant/provision orig",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/CCP/Test/patient_197705232382.xml",
+		"/C/temp/IIS/Jpn.Admin.Client/Jpn.Admin.Client.SetParameters.ExternTest.xml",
+		"/D/Private/Vagrant/provision.sh",
+		"/D/Private/Vagrant/smb.conf",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/page_action/page_action.html",
+		"/C/Program Files/Git/etc/profile",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/page_action/page_action.js",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/common/settings.js",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/page_action/page_action.css",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/contentScripts/journalComments.js",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/contentScripts/navbar.js",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/contentScripts/main.js",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/contentScripts/navbar.css",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/contentScripts/rememberLastPage.js",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/contentScripts/keepMeLoggedIn.js",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/manifest.json",
+		"/C/Workspace/Jpn/Work Docs/Journalen Coon/JournalenCoon/src/contentScripts/views.html",
+		"/C/Users/clopez/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/clopez/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/clopez/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.3.0/Deliverables/SQL/03 JpnLogDb.sql",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.2.3/Deliverables/SQL/UpdateCreateUserEventLogReport.sql",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.2.3/Deliverables/SQL/01 JpnLogDb.sql",
+		"/D/Private/Vagrant/Ubuntu/Vagrantfile",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/maternity_TEST_197705232382.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/CCP/Test/attentionsignal_197705232382.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/CCP/Test/medication_197705232382.xml",
+		"/C/Workspace/Documents/Flex.txt",
+		"/C/temp/Web.config",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/maternity_TEST_19770523-2382.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/caredocs_TEST_197705232382.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/diagnosis_TEST_197705232382.xml",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.3.0/Deliverables/SQL/01 JpnDb.sql",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.3.0/Deliverables/IIS/Jpn.Service.WcfService/Jpn.Service.WcfService.SetParameters.NMT.xml",
+		"/C/temp/IIS/Jpn.Admin.Client.SetParameters.PROD.xml",
+		"/C/temp/IIS/tmp/Jpn.Admin.Client.SetParameters.PROD.xml",
+		"/C/temp/IIS/tmp/Jpn.Service.WcfService.SetParameters.PROD.xml",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.3.0/Deliverables/IIS/Jpn.Admin.Client/Jpn.Admin.Client.SetParameters.NMT.xml",
+		"/C/temp/IIS/Jpn.Admin.Client.SetParameters.NMT.xml",
+		"/C/temp/IIS/Jpn.Service.WcfService.SetParameters.PROD.xml",
+		"/C/temp/IIS/Jpn.Service.WcfService.SetParameters.NMT.xml",
+		"/C/temp/IIS/Jpn.Service.MockService.SetParameters.PROD.xml",
+		"/C/temp/IIS/Jpn.Admin.Client.SetParameters.QA.xml",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.3.0/Deliverables/IIS/Jpn.Service.WcfService/Jpn.Service.WcfService.SetParameters.QA.xml",
+		"/C/Workspace/Jpn/Development/Releases/Release 2.3.0/Deliverables/IIS/Jpn.Service.WcfService/Jpn.Service.WcfService.SetParameters.PROD.xml",
+		"/C/temp/New folder/Jpn.Admin.Client.SetParameters.xml",
+		"/C/temp/New folder/Jpn.Admin.Client.SetParameters new.xml",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/logicaladdressees.xml",
+		"/C/temp/Jpn.Admin.Client/Jpn.Admin.Client.deploy.cmd",
+		"/C/temp/Jpn.Admin.Client/Jpn.Admin.Client.SetParameters.xml",
+		"/C/Users/clopez/Downloads/ball.svg",
+		"/C/Workspace/Jpn/Development/Main/Documents/Test/Testdata/SoapUI/accesslog_TEST_196512073245.xml",
+		"/D/Dropbox/Utveckling/Hemsidor/Wedding/index2.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"james Fra",
+			"19960312",
+			"20050312",
+			"20140312",
+			"vacc1",
+			"sourceSystemHSAid",
+			"1996",
+			":2",
+			"2005",
+			"wcf",
+			"dose>",
+			"urn:vaccinationMedicalRecord",
+			"typeOfVaccine>",
+			"dose>",
+			"dosage",
+			"orgUnitHSAid",
+			"vaccinationMedicalRecord",
+			"urn:vaccinationMedicalRecord",
+			"cordova",
+			"test",
+			"qa",
+			"Tetravac",
+			"Boostrix",
+			"Stelkramp",
+			"Difteri",
+			"Boostrix",
+			"20041222",
+			"20121222",
+			"default",
+			"ps1",
+			"keepMeLoggedInEnabled",
+			"debugger",
+			"de",
+			"debugger",
+			"\"",
+			"addAfterLoginListeners",
+			"addEventHandlers",
+			"addAfterLoginListeners",
+			"afterLoad",
+			"prependAfter",
+			"afterLogin",
+			"createViewModel",
+			"hoverarea",
+			"expand",
+			"expaand",
+			"html",
+			"expand_abbreviation_by_tab",
+			"network",
+			"hostname",
+			"20130524",
+			"CreateUserEventLogReport",
+			"IX_SourceSystemId",
+			"UserLoginReports",
+			"UserLoginRe",
+			"z-index",
+			"respite",
+			"20130606",
+			"20150428",
+			"20150203",
+			"20150203094631",
+			"20150203",
+			"20150304",
+			"20150929",
+			"20130525",
+			"20141219",
+			"rådrum",
+			"20150502",
+			"201506110642",
+			"20130525",
+			"ssl",
+			"Update",
+			"tempu",
+			"dp0",
+			"on",
+			"PatientInformationUpdate",
+			"z-index",
+			"z-in",
+			"loading",
+			"oon-loading-wrapper",
+			"removeC",
+			"Blekinge",
+			".JPG",
+			"2238",
+			"2344",
+			"2328",
+			"2231",
+			"button-tray-down",
+			"img/",
+			"img",
+			"\"img/img_2703.JPG\"",
+			"<li>",
+			"demo",
+			"<img",
+			" <div>\n          <img",
+			"<div>\n          <img",
+			" u=\"image\" ",
+			"cont",
+			"img_co",
+			"\n      <div>\n      </div>",
+			"comment",
+			"raw/IMG_",
+			"raw/DSC",
+			"raw/DSC_0250",
+			"raw/DSC",
+			"<img src=",
+			"IMG_2578",
+			" <img src=",
+			"<img",
+			"      <",
+			"=\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Sourcesystem 1",
+			":1",
+			"dosage>",
+			"vaccineType>",
+			"dosage>",
+			"orgUnitHSAid",
+			"'",
+			"20151008",
+			"20150929",
+			" ",
+			"img_",
+			"dsc"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/router.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/pods/plan/week/route.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "weekfood.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"moduser",
+				"app\\models\\user.js"
+			],
+			[
+				"apptem",
+				"app\\pods\\application\\template.hbs"
+			],
+			[
+				"rout",
+				"app\\router.js"
+			],
+			[
+				"router",
+				"app\\router.js"
+			],
+			[
+				"appte",
+				"app\\pods\\application\\template.hbs"
+			],
+			[
+				"aproute",
+				"app\\pods\\application\\route.js"
+			],
+			[
+				"modeluse",
+				"app\\models\\user.js"
+			],
+			[
+				"modeluser",
+				"Weekfood\\app\\models\\user.js"
+			],
+			[
+				"",
+				"Weekfood\\.gitignore"
+			],
+			[
+				"moderecipe",
+				"app\\models\\recipe.js"
+			],
+			[
+				"mouser",
+				"app\\models\\user.js"
+			],
+			[
+				"retempla",
+				"app\\pods\\recipes\\template.hbs"
+			],
+			[
+				"aptem",
+				"app\\pods\\application\\template.hbs"
+			],
+			[
+				"distem",
+				"podsOld\\dishes\\template.hbs"
+			],
+			[
+				"applindex",
+				"node_modules\\ember-export-application-global\\index.js"
+			],
+			[
+				"bowe",
+				"bower.json"
+			],
+			[
+				"teappl",
+				"app\\templates\\application.hbs"
+			],
+			[
+				".git",
+				"Weekfood\\.gitignore"
+			],
+			[
+				"vaccv1",
+				"SoapUI\\vaccination_v1_TEST_197705232382.xml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

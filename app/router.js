@@ -6,6 +6,13 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login', {});
+  this.authenticatedRoute('recipes', {}, function() {
+    this.authenticatedRoute('new', {});
+  });
+  this.authenticatedRoute('plan', {}, function() {
+    this.authenticatedRoute('week', { path: ':year/:week' });
+  });
 });
 
 export default Router;
