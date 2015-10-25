@@ -1,3 +1,9 @@
-<h1>Week</h1>
+{{#week-planner week=week as |weekDays|}}
+  <h1>Week {{week.weekNumber}}</h1>
 
+  {{#each weekDays as |day|}}
+    {{#week-day day=day}}{{/week-day}}
+  {{/each}}
+
+{{/week-planner}}
 {{outlet}}

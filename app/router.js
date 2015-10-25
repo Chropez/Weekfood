@@ -10,9 +10,9 @@ Router.map(function() {
   this.authenticatedRoute('recipes', {}, function() {
     this.authenticatedRoute('new', {});
   });
-  this.authenticatedRoute('plan', {}, function() {
-    this.authenticatedRoute('week', { path: ':year/:week' });
-  });
+  this.authenticatedRoute('plan', {}, function() {});
+
+  this.authenticatedRoute('plan.week', { path: 'plan/:year/:week' });
 });
 
 export default Router;

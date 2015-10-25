@@ -8,6 +8,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   created: DS.attr('number'),
 
-  weeks: DS.hasMany('week', { async: false }),
+  weeks: DS.hasMany('week', { async: true }),
   recipes: DS.hasMany('recipe', { async: true })
 });
