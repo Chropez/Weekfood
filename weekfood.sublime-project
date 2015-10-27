@@ -1,11 +1,18 @@
 {
-    "folders": [{
-        "path": ".",
-        "folder_exclude_patterns": [
-            "tmp",
-            "node_modules",
-            "bower_components",
-            "dist"
-        ]
-    }],
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"tmp",
+				"node_modules",
+				"bower_components",
+				"dist"
+			],
+			"path": "."
+		},
+		{
+			"path": "D:\\Private\\Vagrant"
+		}
+	]
 }
