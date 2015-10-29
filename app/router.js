@@ -11,8 +11,8 @@ Router.map(function() {
     this.authenticatedRoute('new', {});
   });
   this.authenticatedRoute('plan', {}, function() {});
-
   this.authenticatedRoute('plan.week', { path: 'plan/:year/:week' });
+  this.authenticatedRoute('plan.date', { path: 'plan/:date' });
 });
 
 export default Router;

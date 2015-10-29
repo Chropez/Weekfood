@@ -1,12 +1,13 @@
-{{#link-to 'plan.week' prevWeek}}Previous{{/link-to}}
-{{#link-to 'plan.week' nextWeek}}Next{{/link-to}}
+{{#week-plan week=week as |weekPlanner|}}
+  {{#link-to 'plan.week' weekPlanner.prevWeek}}Previous{{/link-to}}
+  {{#link-to 'plan.week' weekPlanner.nextWeek}}Next{{/link-to}}
 
-<h1>Week {{week.weekNumber}}</h1>
+  <h1>Week {{week.weekNumber}}</h1>
 
-{{#each weekDays as |day|}}
-  {{#week-day day=day}}
-    {{format-date day.date}}
-  {{/week-day}}
-{{/each}}
+  {{#each weekPlanner.weekDays as |day|}}
+    {{#week-day day=day}}
+    {{/week-day}}
+  {{/each}}
 
-{{outlet}}
+  {{outlet}}
+{{/week-plan}}

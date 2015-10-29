@@ -9,17 +9,8 @@ export default Ember.Route.extend({
 
   },
 
-  setupController : function(controller, model, transition){
-    this._super(controller, model);
-
-    controller.set('yearNumber', transition.params['plan.week'].year);
-    controller.set('weekNumber', transition.params['plan.week'].week);
-  },
-
   fetchOrCreateWeek(year, week){
-    let user = this.get('session').get('currentUser');
-    const weekId = this.generateWeekId(user.get('id'), year, week);
-
+    const weekId = this.get('session.currentUser').generateWeekId(year, week);
 
     //Todo test to embed week and see if embedded records are sideloaded
     return this.store.find('week', weekId)
@@ -35,9 +26,6 @@ export default Ember.Route.extend({
       });
   },
 
-  generateWeekId(userId, year, week){
-    return `${userId}-${year}-${week}` ;
-  },
 
   saveWeek(week) {
     /*user.get('weeks').addObject(newWeek);

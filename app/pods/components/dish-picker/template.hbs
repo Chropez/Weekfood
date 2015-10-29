@@ -1,0 +1,17 @@
+<!-- yields button name -->
+<button {{action "toggleIsPickingDish" on="click"}}>{{yield}}</button>
+
+{{!-- Make a wormwhole --}}
+{{#if isPickingDish}}
+  <div>
+    <h1>Pick a dish</h1>
+    <ul>
+      {{#each dishes as |dish|}}
+        <li>
+          {{dish.name}} <button {{action "chooseDish" dish on="click" }}>Choose</button>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
+

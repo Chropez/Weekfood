@@ -1,0 +1,13 @@
+{{date}}
+
+{{#if day.dish}}
+  There is food planned this day!
+{{else}}
+  Nothing planned this day! <br>
+  {{#dish-picker onPickDish=(action 'didPickDish')}}
+    Plan
+  {{/dish-picker}}
+
+{{/if}}
+
+{{outlet}}

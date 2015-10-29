@@ -1,7 +1,17 @@
-{{#if day.dish}}
-asd
-  <strong>{{day.dish.name}}</strong><br>
-  {{day.dish.description}}
-{{/if}}
+{{#link-to 'plan.date' day}}
+  <strong>
+    {{format-date day.date}}
+  </strong><br>
+  {{#if day.dish}}
+    {{day.dish.name}} -
+    {{day.dish.description}}
+  {{else}}
+    Nothing planned
+  {{/if}}
+{{/link-to}}
+<br>
 
+
+<br>
+<br>
 {{yield}}
