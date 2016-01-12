@@ -14,7 +14,7 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model, transition){
     controller.set('day', model);
-    controller.set('date', transition.params['plan.date'].date);
+    controller.set('date', transition.params['calendar.date'].date);
   },
 
   serialize(model, params){

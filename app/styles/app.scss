@@ -1,0 +1,30 @@
+@import 'material-design-lite';
+
+.wf-nav-user {
+  background: linear-gradient(rgba(255, 255, 255, 0.14), rgba(35, 35, 35, 0.58)),
+              url("/img/user-background.jpg");
+  background-size:cover;
+  height: 130px;
+  width: 100%;
+  position: relative;
+  font-weight: bold;
+  color: white;
+}
+
+.wf-nav-user-content {
+  position: relative;
+  display: flex;
+  height:100%;
+  widows: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  & > img {
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
+    margin: 5px 0 10px;
+  }
+}

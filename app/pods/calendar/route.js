@@ -6,6 +6,6 @@ export default Ember.Route.extend({
     const date = moment(),
           year = date.year(),
           week = date.week();
-    this.transitionTo('plan.week', year, week);
+    this.transitionTo('calendar.week', year, week);
   }
 });

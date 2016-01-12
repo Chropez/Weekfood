@@ -1,7 +1,23 @@
-{{#link-to "recipes"}}Recipes{{/link-to}} |
-{{#link-to "plan"}}Planner{{/link-to}} |
-{{#link-to "login"}}Login{{/link-to}}
-<br>
-<hr>
-<br>
-{{outlet}}
+{{#if session.isAuthenticated}}
+  {{#wf-nav title='Weekfood'
+  fixedHeader=true
+  includeHeaderLinks=false
+  fixedDrawer=true
+  includeDrawerTitle=false
+  closeDrawerOnItemClick=true}}
+
+  {{mdl-nav-item name="Calendar" route='calendar'}}
+  {{mdl-nav-item name='Recipes' route='recipes'}}
+  {{mdl-nav-item name='Login' route='login'}}
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+
+      {{outlet}}
+    </div>
+  </div>
+  {{/wf-nav}}
+{{else}}
+{{!-- User is not authenticated --}}
+  {{outlet}}
+{{/if}}

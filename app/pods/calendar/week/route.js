@@ -1,25 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params) {
-    const year = params.year,
-          week = params.week;
-
+  model({year, week}) {
     return this.fetchOrCreateWeek(year, week);
-
   },
 
-  fetchOrCreateWeek(year, week){
-    const weekId = this.get('session.currentUser').generateWeekId(year, week);
+  fetchOrCreateWeek(year, weekNumber){
+    const id = this.get('session.currentUser').generateWeekId(year, weekNumber);
 
     //Todo test to embed week and see if embedded records are sideloaded
-    return this.store.find('week', weekId)
+    return this.store.find('week', id)
       .catch(() => {
         // the week was not found then create a week
         let newWeek = this.store.createRecord('week', {
-          id: weekId,
-          year: year,
-          weekNumber: week
+          id,
+          year,
+          weekNumber
         });
 
         return newWeek;

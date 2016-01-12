@@ -8,6 +8,8 @@ export default ToriiFirebaseAdapter.extend({
 
 import Ember from 'ember';
 
+const { $, get, getProperties, setProperties } = Ember;
+
 export default Ember.Object.extend({
   firebase: Ember.inject.service(),
   store: Ember.inject.service(),
@@ -64,12 +66,22 @@ export default Ember.Object.extend({
    */
   _findOrCreateUser(authData) {
     let store = this.get('store');
-
+    const authUserProps = this.extractUserProperties(authData);
     return store.find('user', authData.uid)
+      .then((user) => {
+        // Check if any user values have changed
+debugger;
+        if(this.userHasChanged(user, authUserProps)) {
+          return setProperties(user, authUserProps);
+        }
+        return user;
+      })
       .catch(() => {
-          let newUser = store.createRecord('user', this.extractUserProperties(authData));
+          authUserProps['created'] = new Date().getTime();
+          let newUser = store.createRecord('user', authUserProps);
           return newUser.save();
       });
+
   },
 
   /**
@@ -79,20 +91,32 @@ export default Ember.Object.extend({
    * @return {Object} An updated property hash
    */
   extractUserProperties(authData) {
-    var name = 'Unknown';
-    var provider = authData.provider;
-    var userData = authData[provider];
+    let name = 'Unknown';
+    const provider = authData.provider;
+    let userData = authData[provider];
+    let avatar = userData.profileImageURL;
 
     if (userData.displayName) {
       name = userData.displayName;
     } else if (userData.username) {
       name = userData.username;
     }
+
     return {
       id: authData.uid,
       displayName: name,
-      email: userData.email || null,
-      created: new Date().getTime()
+      email: userData.email,
+      avatar
     };
+  },
+
+
+  userHasChanged(user, authProps){
+    const userProps = getProperties(user, 'avatar', 'displayName', 'email') ;
+    return userProps.avatar       !== authProps.avatar ||
+           userProps.displayName  !== authProps.displayName ||
+           userProps.email        !== authProps.email ;
   }
+
+
 });

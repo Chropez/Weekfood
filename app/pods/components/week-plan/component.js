@@ -25,10 +25,16 @@ export default Ember.Component.extend({
     return this.get('week.days').sortBy('date');
   }),
 
-  prevWeek : Ember.computed('model', function() {
+  prevWeek : Ember.computed('week', function() {
     return moment(this.get('week.momentWeek')).subtract(1, 'week').week();
   }),
-  nextWeek : Ember.computed('model', function() {
+  nextWeek : Ember.computed('week', function() {
     return moment(this.get('week.momentWeek')).add(1, 'week').week();
+  }),
+  prevWeekYear : Ember.computed('week', function() {
+    return moment(this.get('week.momentWeek')).subtract(1, 'week').weekYear();
+  }),
+  nextWeekYear : Ember.computed('week', function() {
+    return moment(this.get('week.momentWeek')).add(1, 'week').weekYear();
   })
 });

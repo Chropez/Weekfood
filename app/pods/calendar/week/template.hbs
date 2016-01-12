@@ -1,6 +1,6 @@
 {{#week-plan week=week as |weekPlanner|}}
-  {{#link-to 'plan.week' weekPlanner.prevWeek}}Previous{{/link-to}}
-  {{#link-to 'plan.week' weekPlanner.nextWeek}}Next{{/link-to}}
+  {{#link-to 'calendar.week' weekPlanner.prevWeekYear weekPlanner.prevWeek}}Previous{{/link-to}}
+  {{#link-to 'calendar.week' weekPlanner.nextWeekYear weekPlanner.nextWeek}}Next{{/link-to}}
 
   <h1>Week {{week.weekNumber}}</h1>
 

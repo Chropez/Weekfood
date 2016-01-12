@@ -6,7 +6,8 @@ module.exports = function(environment) {
     podModulePrefix: 'weekfood/pods',
     environment: environment,
     contentSecurityPolicy: {
-      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'style-src': "'self' http://fonts.googleapis.com/icon?family=Material+Icons"
     },
     firebase: 'https://sizzling-fire-1482.firebaseio.com/',
     torii: {
@@ -24,6 +25,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    sassOptions: {
+      includePaths: ['bower_components/material-design-lite/src']
     }
   };
 
