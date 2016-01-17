@@ -1,0 +1,28 @@
+<div class="mdl-grid">
+  {{!-- Just spacer cell --}}
+  <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--1-col-tablet mdl-cell--hide-phone"></div>
+  <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card mdl-shadow--2dp" id="sign-in-card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Welcome to Weekfood</h2>
+      </div>
+      <div id="sign-in-content">
+        {{#if session.isAuthenticated}}
+          Signed in as {{session.currentUser.displayName}}
+          <button {{action "signOut"}}>Sign out</button>
+          {{outlet}}
+        {{else}}
+          <p>
+            Please sign in with any of the following services.
+          </p>
+          {{#mdl-button isRaised=true classNames="button-sign-in-facebook" action="signInWithFacebook"}}
+              Sign in with Facebook
+          {{/mdl-button}}
+          {{#mdl-button isRaised=true classNames="button-sign-in-google" action="signInWithGoogle"}}
+              Sign in with Google
+          {{/mdl-button}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

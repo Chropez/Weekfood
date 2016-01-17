@@ -1,23 +1,25 @@
 {{#if session.isAuthenticated}}
   {{#wf-nav title='Weekfood'
   fixedHeader=true
-  includeHeaderLinks=false
   fixedDrawer=true
+  includeHeaderLinks=false
   includeDrawerTitle=false
-  closeDrawerOnItemClick=true}}
+  closeDrawerOnItemClick=true
+  signOutAction=(action 'signOutAction')}}
 
-  {{mdl-nav-item name="Calendar" route='calendar'}}
-  {{mdl-nav-item name='Recipes' route='recipes'}}
-  {{mdl-nav-item name='Login' route='login'}}
-
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--12-col">
-
-      {{outlet}}
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        {{outlet}}
+        <div class="">
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+            <span class="mdl-ripple"></span>
+            Button
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
   {{/wf-nav}}
 {{else}}
-{{!-- User is not authenticated --}}
+  {{!-- User is not authenticated --}}
   {{outlet}}
 {{/if}}

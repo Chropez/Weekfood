@@ -1,30 +1,98 @@
+@import "_color-definitions";
+
+$color-primary:$palette-light-blue-800;
+$color-accent: $palette-pink-A200;
+
 @import 'material-design-lite';
 
-.wf-nav-user {
-  background: linear-gradient(rgba(255, 255, 255, 0.14), rgba(35, 35, 35, 0.58)),
-              url("/img/user-background.jpg");
-  background-size:cover;
-  height: 130px;
-  width: 100%;
-  position: relative;
-  font-weight: bold;
-  color: white;
+body {
+  background-color: #F2F2F2;
 }
 
-.wf-nav-user-content {
+// Utils
+.mdl-grid-center-children {
+  align-items: center;
+}
+
+// Sign in page
+#sign-in-card {
+  width:100%;
+  align-items: center;
+  padding: 30px;
+}
+
+#sign-in-content {
+  padding: 0 16px 16px;
+
+  .mdl-button {
+    margin-bottom: 5px;
+  }
+
+  .button-sign-in-facebook {
+    background: #44659B !important;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+  }
+  .button-sign-in-google {
+    background: #DF4938 !important;
+    max-width: 300px;
+    width: 100%;
+    display: block;
+  }
+}
+
+
+// nav
+.wf-nav-user {
+  background: //linear-gradient(rgba(255, 255, 255, 0.15), rgba(35, 35, 35, 0.7)),
+              url("/img/user-background3.jpg");
+  background-size:cover;
+  min-height: 130px;
+  width: 100%;
+  color: white;
+
   position: relative;
   display: flex;
-  height:100%;
-  widows: 100%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
 
-
-  & > img {
+  img {
     border-radius: 50px;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     margin: 5px 0 10px;
+    border: 2px solid white;
+    margin-left: 15px;
+  }
+}
+
+.wf-nav-user .wf-user-content {
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+
+  .wf-nav-user-name {
+    padding-left: 15px;
+    max-width: 80%;
+  }
+
+  .wf-nav-menu {
+    margin-left: auto;
+    button {
+      color:white;
+    }
+  }
+}
+
+.mdl-layout__drawer .mdl-navigation {
+  .mdl-navigation__link {
+    padding: 10px 30px;
+  }
+
+  .mdl-navigation__link .icon.material-icons {
+    position: relative;
+    top: 6px;
   }
 }

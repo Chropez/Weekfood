@@ -7,7 +7,9 @@ module.exports = function(environment) {
     environment: environment,
     contentSecurityPolicy: {
       'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
-      'style-src': "'self' http://fonts.googleapis.com/icon?family=Material+Icons"
+      'style-src': "'self' http://fonts.googleapis.com",
+      'font-src': "'self' http://fonts.gstatic.com/",
+      'img-src': "'self' https://lh5.googleusercontent.com https://scontent.xx.fbcdn.net"
     },
     firebase: 'https://sizzling-fire-1482.firebaseio.com/',
     torii: {
