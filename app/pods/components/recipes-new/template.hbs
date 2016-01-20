@@ -1,0 +1,19 @@
+<div class="mdl-card__title">
+  <h2 class="mdl-card__title-text">New Recipe</h2>
+</div>
+<div class="mdl-card__supporting-text">
+  <form {{action "addRecipe" on="submit"}}>
+    <div>
+      {{mdl-textfield label="Name" value=name}}
+    </div>
+    <div>
+      {{mdl-textfield label="Description" value=description}}
+    </div>
+
+  </form>
+</div>
+
+{{#mdl-card-actions classNames="p15"}}
+  {{mdl-button text="Add Recipe" isRaised=true action="addRecipe"}}
+  <!-- {{mdl-button text="Cancel"}} -->
+{{/mdl-card-actions}}

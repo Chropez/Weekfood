@@ -1,0 +1,29 @@
+ .recipe-card {
+   justify-content: space-between;
+   .mdl-card__title {
+     background-position: center center;
+     background-color: #108B7F;
+     background-size: contain;
+     background-repeat: no-repeat;
+     height:160px;
+   }
+   .mdl-card__title.background-cover {
+     background-size: cover;
+   }
+   .mdl-card__supporting-text {
+     color: $text-color-primary;
+   }
+   .remove-recipe {
+     color: lighten($gray, 30);
+     float: right;
+   }
+ }
+
+
+//add recipe
+.new-recipe {
+  .mdl-card__supporting-text {
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+}

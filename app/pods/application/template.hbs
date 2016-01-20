@@ -7,17 +7,8 @@
   closeDrawerOnItemClick=true
   signOutAction=(action 'signOutAction')}}
 
-    <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--12-col">
-        {{outlet}}
-        <div class="">
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-            <span class="mdl-ripple"></span>
-            Button
-          </button>
-        </div>
-      </div>
-    </div>
+    {{outlet}}
+
   {{/wf-nav}}
 {{else}}
   {{!-- User is not authenticated --}}

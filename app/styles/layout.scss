@@ -1,0 +1,25 @@
+
+body {
+  background-color: #F2F2F2;
+  font-family: $preferred_font;
+}
+
+.mdl-layout__content {
+  display: flex;
+  height: 100%;
+}
+
+.page-content {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.page-header {
+  padding:8px;
+  h1 {
+    font-size: 30px;
+    color: $gray;
+    margin: 0;
+  }
+}

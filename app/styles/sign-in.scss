@@ -1,0 +1,27 @@
+// Sign in page
+#sign-in-card {
+  width:100%;
+  align-items: center;
+  padding: 30px;
+}
+
+#sign-in-content {
+  padding: 0 16px 16px;
+
+  .mdl-button {
+    margin-bottom: 5px;
+  }
+
+  .button-sign-in-facebook {
+    background: #44659B !important;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+  }
+  .button-sign-in-google {
+    background: #DF4938 !important;
+    max-width: 300px;
+    width: 100%;
+    display: block;
+  }
+}

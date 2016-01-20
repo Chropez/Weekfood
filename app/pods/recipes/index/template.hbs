@@ -1,1 +1,32 @@
-{{#link-to "recipes.new"}}New Recipe{{/link-to}}
+<div class="page-header">
+  <h1>Recipes</h1>
+</div>
+
+<div class="mdl-grid">
+  {{#each model as |recipe|}}
+    <div class="mdl-cell mdl-cell--3-col mdl-card mdl-shadow--2dp recipe-card">
+      <div class="mdl-card__title {{unless recipe.imageUrl 'background-cover'}}" style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')">
+      </div>
+      <div  class="mdl-card__supporting-text">
+        <div>{{recipe.name}}</div>
+        {{recipe.description}}
+      </div>
+      {{#mdl-card-actions}}
+        {{mdl-button text='Edit'}}
+        {{mdl-button icon="delete" classNames="remove-recipe"}}
+      {{/mdl-card-actions}}
+    </div>
+  {{/each}}
+</div>
+{{#unless model}}
+  <div class="list-items-empty-text flex-child-center">
+      <p>
+        You have no recipes.
+      </p>
+      <p>
+        Use the button on the bottom right to <strong>add</strong> one.
+      </p>
+  </div>
+{{/unless}}
+
+{{mdl-button isFloating=true icon='add' action="goToAddRecipe" classNames="fab-bottom-right mdl-shadow--4dp"}}
