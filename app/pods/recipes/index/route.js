@@ -1,13 +1,14 @@
 import Ember from 'ember';
 
 const {
+  Route,
   get
 } = Ember;
 
-export default Ember.Route.extend({
+export default Route.extend({
   model(){
-    const store = this.store;
-    var userId = get(this, 'session.currentUser.id');
+    const store  = get(this, 'store'),
+          userId = get(this, 'session.currentUser.id');
     return store.query('recipe', { orderBy: 'author', equalTo: userId});
   },
   actions: {

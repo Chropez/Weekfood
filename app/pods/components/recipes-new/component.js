@@ -20,6 +20,7 @@ const recipeProperties = [
 export default Component.extend({
   store: service(),
   session: service(),
+
   actions: {
     addRecipe() {
       const recipeProps = getProperties(this, recipeProperties);
@@ -27,6 +28,6 @@ export default Component.extend({
 
       let recipe = store.createRecord('recipe', recipeProps);
       get(this, 'onAddRecipe')(recipe);
-    }    
+    }
   }
 });
