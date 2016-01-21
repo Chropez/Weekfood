@@ -7,7 +7,6 @@ export default Ember.Route.extend({
                .fetch()
                .catch(() => {
                  // not logged in
-                 debugger;
                  this.transitionTo('sign-in');
                });
   },
