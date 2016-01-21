@@ -7,9 +7,11 @@ module.exports = function(environment) {
     environment: environment,
     contentSecurityPolicy: {
       'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'default-src': "https://s-dal5-nss-20.firebaseio.com/",
       'font-src': "'self' http://fonts.gstatic.com/",
-      'img-src': "'self' https://lh5.googleusercontent.com https://scontent.xx.fbcdn.net"
+      'img-src': "'self' https://lh5.googleusercontent.com https://scontent.xx.fbcdn.net",
+      'script-src': "'self' 'unsafe-eval' https://s-dal5-nss-20.firebaseio.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com"
     },
     firebase: 'https://sizzling-fire-1482.firebaseio.com/',
     torii: {

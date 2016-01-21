@@ -8,7 +8,10 @@ export default ToriiFirebaseAdapter.extend({
 
 import Ember from 'ember';
 
-const { getProperties, setProperties } = Ember;
+const {
+  getProperties,
+  isEmpty
+} = Ember;
 
 export default Ember.Object.extend({
   firebase: Ember.inject.service(),
@@ -71,7 +74,8 @@ export default Ember.Object.extend({
       .then((user) => {
         // Check if any user values have changed
         if(this.userHasChanged(user, authUserProps)) {
-          return setProperties(user, authUserProps);
+          user.setProperties(authUserProps);
+          return user.save();
         }
         return user;
       })
@@ -104,7 +108,7 @@ export default Ember.Object.extend({
     return {
       id: authData.uid,
       displayName: name,
-      email: userData.email,
+      email: !isEmpty(userData.email) ? userData.email : null,
       avatar
     };
   },

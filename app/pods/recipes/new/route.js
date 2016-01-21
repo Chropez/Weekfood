@@ -16,8 +16,6 @@ export default Ember.Route.extend({
           this.transitionTo('recipes');
         });
       });
-
-
     }
   }
 });
