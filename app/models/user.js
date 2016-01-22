@@ -14,11 +14,9 @@ export default DS.Model.extend({
   weeks: DS.hasMany('week', { async: true }),
   recipes: DS.hasMany('recipe', { async: true }),
 
-  //Utility functions
-  generateWeekId(year, week){
+  // Utility functions
+  generateWeekId(year, week) {
     const userId = this.get('id');
-    return `${userId}-${year}-${week}` ;
+    return `${userId}-${year}-${week}`;
   }
-
-
 });

@@ -3,9 +3,9 @@ import moment from 'moment';
 
 export default Ember.Route.extend({
   beforeModel() {
-    const date = moment(),
-          year = date.year(),
-          week = date.week();
+    const date = moment();
+    const year = date.year();
+    const week = date.week();
     this.transitionTo('calendar.week', year, week);
   }
 });

@@ -12,15 +12,16 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    signIn (provider) {
+    signIn(provider) {
+      const providerObj = { provider: provider };
       this.get('session')
-        .open('firebase', { provider : provider })
-        .then(() => {
-          this.transitionTo('recipes');
-        });
+          .open('firebase', providerObj)
+          .then(() => {
+            this.transitionTo('recipes');
+          });
     },
 
-    signOut(){
+    signOut() {
       this.get('session')
       .close()
       .then(() => {
