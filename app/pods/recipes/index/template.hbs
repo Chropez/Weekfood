@@ -4,17 +4,11 @@
 
 <div class="mdl-grid">
   {{#each model as |recipe|}}
-    <div class="mdl-cell mdl-cell--3-col mdl-card mdl-shadow--2dp recipe-card">
-      <div class="mdl-card__title {{unless recipe.imageUrl 'background-cover'}}" style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')">
-      </div>
-      <div  class="mdl-card__supporting-text">
-        <div>{{recipe.name}}</div>
-        {{recipe.description}}
-      </div>
-      {{#mdl-card-actions}}
-        {{mdl-button text='Edit'}}
-        {{mdl-button icon="delete" classNames="remove-recipe"}}
-      {{/mdl-card-actions}}
+    <div class="mdl-cell mdl-cell--3-col ">
+      {{recipe-list-item
+        recipe=recipe
+        edit=(route-action "goToEditRecipe")
+        delete=(route-action "deleteRecipe")}}
     </div>
   {{/each}}
 </div>

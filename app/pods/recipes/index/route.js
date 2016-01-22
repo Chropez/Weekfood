@@ -12,8 +12,16 @@ export default Route.extend({
     return store.query('recipe', { orderBy: 'author', equalTo: userId});
   },
   actions: {
-    goToAddRecipe () {
+    goToAddRecipe() {
       this.transitionTo('recipes.new');
+    },
+
+    goToEditRecipe(recipe) {
+      this.transitionTo('recipes.edit', recipe);
+    },
+
+    deleteRecipe(recipe) {
+      recipe.destroyRecord();
     }
   }
 });

@@ -4,16 +4,16 @@
 <div class="mdl-card__supporting-text">
   <form {{action "addRecipe" on="submit"}}>
     <div>
-      {{mdl-textfield label="Name" value=name}}
+      {{mdl-textfield label="Name" value=recipe.name}}
     </div>
     <div>
-      {{mdl-textfield label="Description" value=description}}
+      {{mdl-textfield label="Description" value=recipe.description}}
     </div>
 
   </form>
 </div>
 
 {{#mdl-card-actions classNames="p15"}}
-  {{mdl-button text="Add Recipe" isRaised=true action="addRecipe"}}
+  {{mdl-button text="Save" isRaised=true action="addRecipe"}}
   <!-- {{mdl-button text="Cancel"}} -->
 {{/mdl-card-actions}}
