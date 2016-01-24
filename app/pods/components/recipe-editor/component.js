@@ -13,7 +13,7 @@ export default Component.extend({
   actions: {
     addRecipe() {
       const recipe = get(this, 'recipe');
-      get(this, 'onAddRecipe')(recipe);
+      get(this, 'saveRecipe')(recipe);
     }
   }
 });

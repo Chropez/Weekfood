@@ -1,7 +1,10 @@
-
 body {
   background-color: #F2F2F2;
   font-family: $preferred_font;
+}
+
+.hidden-header {
+    display: none !important;
 }
 
 .mdl-layout__content {
@@ -21,5 +24,64 @@ body {
     font-size: 30px;
     color: $gray;
     margin: 0;
+  }
+}
+
+.header-with-icon {
+
+}
+
+// Drawer button... taken from mdl css
+.mdl-layout__drawer-button, .wf-header-button {
+
+  i {
+    margin-top: 13px;
+  }
+
+  &>.mdl-button {
+    top: -2px;
+  }
+
+  display: block;
+
+  position: absolute;
+  height: $layout-drawer-button-desktop-size;
+  width: $layout-drawer-button-desktop-size;
+  border: 0;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: $layout-drawer-button-desktop-size + 2;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 10px 12px;
+  top: 0;
+  left: 0;
+  color: $layout-header-text-color;
+
+  z-index: 4;
+
+  .mdl-layout__header & {
+    position: absolute;
+    color: $layout-header-text-color;
+    background-color: inherit;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+      margin: 4px;
+    }
+  }
+
+  @media screen and (max-width: $layout-screen-size-threshold) {
+    margin: 4px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (min-width: $layout-screen-size-threshold + 1px) {
+    .mdl-layout--fixed-drawer > & {
+      display: none;
+    }
   }
 }

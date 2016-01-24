@@ -2,12 +2,20 @@ import Ember from 'ember';
 import DS from 'ember-data';
 import moment from 'moment';
 
-export default DS.Model.extend({
-  year: DS.attr('number'),
-  weekNumber: DS.attr('number'),
-  days: DS.hasMany('day', { async: true }),
+const {
+  Model,
+  attr,
+  hasMany
+} = DS;
 
-  momentWeek: Ember.computed('year', 'weekNumber', function() {
+const { computed } = Ember;
+
+export default Model.extend({
+  year: attr('number'),
+  weekNumber: attr('number'),
+  days: hasMany('day'),
+
+  momentWeek: computed('year', 'weekNumber', function() {
     const weekNumber = this.get('weekNumber');
     const year = this.get('year');
     const dateString = `${year}-${weekNumber}`;

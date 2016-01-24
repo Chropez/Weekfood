@@ -1,7 +1,10 @@
-
-<div class="mdl-grid">
-  {{recipe-editor
-    classNames="mdl-cell mdl-cell--12-col new-recipe mdl-card mdl-shadow--2dp"
-    recipe=model
-    onAddRecipe=(route-action "saveRecipe")}}
-</div>
+{{wf-nav-header buttonIcon='arrow_back' buttonGoToRoute='recipes' title="New Recipe"}}
+{{#wf-content}}
+  <div class="mdl-grid">
+    {{recipe-editor
+      classNames="mdl-cell mdl-cell--12-col recipe-editor mdl-card mdl-shadow--2dp"
+      recipe=model
+      saveRecipe=(route-action "saveRecipe")
+      title="New Recipe"}}
+  </div>
+{{/wf-content}}

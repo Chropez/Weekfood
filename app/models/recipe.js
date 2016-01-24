@@ -1,13 +1,19 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  description: DS.attr('string'),
-  prepTime: DS.attr('number'),
-  cookTime: DS.attr('number'),
-  ovenTemperature: DS.attr('number'),
-  servings: DS.attr('number'),
-  imageUrl: DS.attr('string'),
+const {
+  Model,
+  attr,
+  belongsTo
+} = DS;
 
-  author: DS.belongsTo('user', { async: true })
+export default Model.extend({
+  name: attr('string'),
+  description: attr('string'),
+  prepTime: attr('number'),
+  cookTime: attr('number'),
+  ovenTemperature: attr('number'),
+  servings: attr('number'),
+  imageUrl: attr('string'),
+
+  author: belongsTo('user')
 });

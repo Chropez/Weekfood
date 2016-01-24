@@ -1,14 +1,6 @@
 {{#if session.isAuthenticated}}
-  {{#wf-nav title='Weekfood'
-  fixedHeader=true
-  fixedDrawer=true
-  includeHeaderLinks=false
-  includeDrawerTitle=false
-  closeDrawerOnItemClick=true
-  signOutAction=(action 'signOutAction')}}
-
+  {{#wf-nav onSignOut=(route-action 'signOut')}}
     {{outlet}}
-
   {{/wf-nav}}
 {{else}}
   {{!-- User is not authenticated --}}

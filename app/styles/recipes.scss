@@ -1,7 +1,7 @@
  .recipe-card {
    justify-content: space-between;
    width: 100%;
-   
+
    .mdl-card__title {
      background-position: center center;
      background-color: #108B7F;
@@ -23,9 +23,19 @@
 
 
 //add recipe
-.new-recipe {
+.recipe-editor {
   .mdl-card__supporting-text {
     padding-top: 0px;
     padding-bottom: 30px;
+  }
+
+  #image-preview {
+    height: 150px;
+    width: 300px;
+    background-position: center center;
+    background-color: #108B7F;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

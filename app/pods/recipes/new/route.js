@@ -2,20 +2,20 @@ import Ember from 'ember';
 
 const {
   Route,
-  get,
-  set
+  get
 } = Ember;
 
 export default Route.extend({
-  model(){
-    return this.store.createRecord('recipe');
+  model() {
+    const author = get(this, 'session.currentUser');
+    const store  = get(this, 'store');
+    
+    return store.createRecord('recipe', { author });
   },
 
   actions: {
     saveRecipe(recipe) {
-      let author = get(this, 'session.currentUser');
-      set(recipe, 'author', author);
-
+      const author = get(this, 'session.currentUser');
       recipe.save().then(() => {
         author.save().then(() => {
           this.transitionTo('recipes');
@@ -23,9 +23,9 @@ export default Route.extend({
       });
     },
 
-    willTransition(/*transition*/){
+    willTransition() {
       const model = get(this.controller, 'model');
-      if(get(model, 'isNew')){
+      if (get(model, 'isNew')) {
         model.destroyRecord();
       }
     }

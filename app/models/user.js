@@ -1,18 +1,23 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
+const {
+  Model,
+  attr,
+  hasMany
+} = DS;
+
+export default Model.extend({
   /*firstName: DS.attr('string'),
   lastName: DS.attr('string'),*/
-  uid: DS.attr('string'),
-  displayName: DS.attr('string'),
+  displayName: attr('string'),
 
-  email: DS.attr('string'),
-  created: DS.attr('number'),
+  email: attr('string'),
+  created: attr('number'),
 
-  avatar: DS.attr('string'),
+  avatar: attr('string'),
 
-  weeks: DS.hasMany('week', { async: true }),
-  recipes: DS.hasMany('recipe', { async: true }),
+  weeks: hasMany('week'),
+  recipes: hasMany('recipe'),
 
   // Utility functions
   generateWeekId(year, week) {

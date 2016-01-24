@@ -23,5 +23,6 @@ export default Route.extend({
     deleteRecipe(recipe) {
       recipe.destroyRecord();
     }
+
   }
 });

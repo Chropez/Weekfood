@@ -1,5 +1,5 @@
 <div class="mdl-card__title">
-  <h2 class="mdl-card__title-text">New Recipe</h2>
+  <h2 class="mdl-card__title-text">{{title}}</h2>
 </div>
 <div class="mdl-card__supporting-text">
   <form {{action "addRecipe" on="submit"}}>
@@ -9,7 +9,15 @@
     <div>
       {{mdl-textfield label="Description" value=recipe.description}}
     </div>
+    <div>
+      {{mdl-textfield label="Link to Image" value=recipe.imageUrl}}
+    </div>
 
+    {{#if recipe.imageUrl}}
+        <div id="image-preview"
+             style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')">
+        </div>
+    {{/if}}
   </form>
 </div>
 

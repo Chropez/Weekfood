@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const {
+  Route,
+  set
+} = Ember;
+
+export default Route.extend({
 
   beforeModel() {
     return this.get('session')
@@ -11,11 +16,15 @@ export default Ember.Route.extend({
                });
   },
 
+  setupController(...args) {
+    this._super(...args);
+    set(this, 'controller.showDefaultHeader', true);
+  },
+
   actions: {
     signIn(provider) {
-      const providerObj = { provider: provider };
       this.get('session')
-          .open('firebase', providerObj)
+          .open('firebase', { provider })
           .then(() => {
             this.transitionTo('recipes');
           });

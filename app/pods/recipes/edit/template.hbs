@@ -1,6 +1,11 @@
+<div class="page-action-toolbar">
+  {{mdl-button text="Back" action="goToRecipes"}}
+</div>
+
 <div class="mdl-grid">
   {{recipe-editor
-    classNames="mdl-cell mdl-cell--12-col new-recipe mdl-card mdl-shadow--2dp"
+    classNames="mdl-cell mdl-cell--12-col recipe-editor mdl-card mdl-shadow--2dp"
     recipe=model
-    onAddRecipe=(route-action "saveRecipe")}}
+    saveRecipe=(route-action "saveRecipe")
+    title="Edit Recipe"}}
 </div>
