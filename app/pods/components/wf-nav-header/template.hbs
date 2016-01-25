@@ -1,15 +1,15 @@
 {{#if showDrawerButton}}
-  <div class="mdl-layout__drawer-button">
+  <div class="wf-header-button wf-header-menu-button"  {{action (action "toggleDrawer")}}>
     <i class="material-icons">menu</i>
   </div>
 {{else}}
-<div class="wf-header-button">
-  {{#if buttonGoToRoute}}
-    {{#link-to buttonGoToRoute classNames="mdl-button--icon"}}{{mdl-icon icon=buttonIcon}}{{/link-to}}
-  {{else}}
-    {{mdl-button icon=buttonIcon isColored=false action='buttonAction'}}
-  {{/if}}
-  </div>
+  <div class="wf-header-button">
+    {{#if buttonGoToRoute}}
+      {{#link-to buttonGoToRoute classNames="mdl-button--icon"}}{{mdl-icon icon=buttonIcon}}{{/link-to}}
+    {{else}}
+      {{mdl-button icon=buttonIcon isColored=false action='buttonAction'}}
+    {{/if}}
+    </div>
 {{/if}}
 
 <div class="mdl-layout__header-row">

@@ -22,7 +22,7 @@ export default Component.extend({
   showDrawerButton: equal('buttonIcon', 'menu'),
 
   classNameBindings: [
-    'showIcon:header-with-icon'
+    'showIcon:wf-header-with-icon'
   ],
 
   actions: {
