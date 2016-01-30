@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('service:wf-drawer', 'Unit | Service | wf drawer', {
+moduleFor('service:wf-nav', 'Unit | Service | wf nav', {
   // Specify the other units that are required for this test.
   // needs: ['service:foo']
 });

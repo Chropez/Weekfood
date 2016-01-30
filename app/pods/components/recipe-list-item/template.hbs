@@ -1,10 +1,16 @@
-<div class="mdl-card__title {{if recipe.imageUrl 'background-cover'}}"
-     style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')"></div>
+{{#link-to 'recipes.recipe' recipe classNames="mdl-card__title" }}
+  <div class="mdl-card__title_image {{if recipe.imageUrl 'background-cover'}}"
+       style={{imageStyle}}>
+  </div>
+{{/link-to}}
+     {{!-- ></div> --}}
 
-<div  class="mdl-card__supporting-text">
-  <div>{{recipe.name}}</div>
-  {{recipe.description}}
-</div>
+{{#link-to 'recipes.recipe' recipe classNames="mdl-card__supporting-text"}}
+  <div class="recipe-name">{{recipe.name}}</div>
+  {{#if recipe.description}}
+    <div class="recipe-description">{{recipe.description}}</div>
+  {{/if}}
+{{/link-to}}
 
 {{#mdl-card-actions}}
   {{mdl-button text="Edit" action="edit"}}

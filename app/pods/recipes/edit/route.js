@@ -6,6 +6,10 @@ const {
 } = Ember;
 
 export default Route.extend({
+  model({recipe_id}) {
+    return this.store.find('recipe', recipe_id);
+  },
+
   actions: {
     saveRecipe(recipe) {
       const author = get(this, 'session.currentUser');

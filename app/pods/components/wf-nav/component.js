@@ -8,7 +8,7 @@ const {
 
 export default MdlNav.extend({
   session: service(),
-  wfDrawer: service(),
+  wfNav: service(),
 
   title: 'Weekfood',
 
@@ -21,9 +21,9 @@ export default MdlNav.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    const wfDrawer = get(this, 'wfDrawer');
+    const wfNav = get(this, 'wfNav');
     const mdlComponent = get(this, '_mdlComponent');
-    wfDrawer.setMdlComponent(mdlComponent);
+    wfNav.setMdlComponent(mdlComponent);
   },
 
   actions: {

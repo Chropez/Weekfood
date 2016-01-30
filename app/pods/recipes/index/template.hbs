@@ -2,7 +2,7 @@
 {{#wf-content}}
     <div class="mdl-grid">
       {{#each model as |recipe|}}
-        <div class="mdl-cell mdl-cell--3-col ">
+        <div class="recipe-list-item-cell mdl-cell mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-cell--3-col-desktop">
           {{recipe-list-item
             recipe=recipe
             edit=(route-action "goToEditRecipe")
@@ -21,4 +21,7 @@
       </div>
     {{/unless}}
     {{mdl-button isFloating=true icon='add' action="goToAddRecipe" classNames="fab-bottom-right mdl-shadow--4dp"}}
+    <div style="height:90px"></div>
 {{/wf-content}}
+
+{{outlet}}

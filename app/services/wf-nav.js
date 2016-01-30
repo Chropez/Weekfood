@@ -9,11 +9,13 @@ const {
 
 export default Service.extend({
   _mdlComponent: null,
+  transparent: false,
+
   setMdlComponent(mdlComponent) {
     set(this, '_mdlComponent', mdlComponent);
   },
 
-  toggle() {
+  toggleDrawer() {
     const mdlComponent = get(this, '_mdlComponent');
     if(!isEmpty(mdlComponent)){
       mdlComponent.drawerToggleHandler_();

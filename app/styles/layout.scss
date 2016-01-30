@@ -27,8 +27,13 @@ body {
   }
 }
 
+#hidden-drawer-button {
+  display: none;
+}
+
 .mdl-layout__header.wf-header-with-icon {
   flex-direction: row;
+  position: relative;
   .wf-header-button {
     position: relative !important;
   }
@@ -38,6 +43,28 @@ body {
   .mdl-layout__header-row {
     padding-left:16px;
   }
+}
+
+.mdl-layout__header--transparent::before{
+  content:"";
+  background: rgba(0, 0, 0, 0.29);
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.mdl-layout__header--transparent {
+  background-size:cover;
+  height:400px;
+}
+
+.mdl-card__supporting-text {
+  padding:12px;
+}
+
+.mdl-layout__drawer {
+  border-right: none;
 }
 
 // Drawer button... taken from mdl css
@@ -93,4 +120,8 @@ body {
       display: none;
     }
   }
+}
+
+.mdl-layout__drawer.is-visible ~ .mdl-layout__content.mdl-layout__content {
+    overflow: auto;
 }
