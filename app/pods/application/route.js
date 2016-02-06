@@ -9,11 +9,11 @@ export default Route.extend({
 
   beforeModel() {
     return this.get('session')
-               .fetch()
-               .catch(() => {
-                 // not logged in
-                 this.transitionTo('sign-in');
-               });
+       .fetch()
+       .catch(() => {
+         // not logged in
+         this.transitionTo('sign-in');
+       });
   },
 
   setupController(...args) {

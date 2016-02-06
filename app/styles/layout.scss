@@ -34,6 +34,11 @@ body {
 .mdl-layout__header.wf-header-with-icon {
   flex-direction: row;
   position: relative;
+  background-position: 0px -100px;
+  background-repeat: no-repeat;
+  background-position: 0 -50px;
+  background-size: cover;
+
   .wf-header-button {
     position: relative !important;
   }
@@ -56,7 +61,17 @@ body {
 }
 .mdl-layout__header--transparent {
   background-size:cover;
-  height:400px;
+
+  // phone
+  @media (max-width: $grid-tablet-breakpoint - 1) {
+    height:130px;
+  }
+
+  // tablet
+  @media (min-width: $grid-tablet-breakpoint) {
+      height:225px;
+  }
+
 }
 
 .mdl-card__supporting-text {
@@ -64,7 +79,7 @@ body {
 }
 
 .mdl-layout__drawer {
-  border-right: none;
+  // border-right: none;
 }
 
 // Drawer button... taken from mdl css
