@@ -1,6 +1,8 @@
 @import "_color-definitions";
-$color-primary:$palette-light-blue-800;
-$color-accent: $palette-pink-A200;
+
+$color-primary:"200,71,39";
+$color-accent: "255,64,129";
+$color-primary-dark: "140,35,9";
 
 @import 'material-design-lite';
 

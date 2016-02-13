@@ -1,6 +1,6 @@
 {{#link-to 'recipes.recipe' recipe classNames="mdl-card__title" }}
   <div class="mdl-card__title_image {{if recipe.imageUrl 'background-cover'}}"
-       style={{imageStyle}}>
+       style={{safestring-bgimage recipe.imageUrl}}>
   </div>
 {{/link-to}}
      {{!-- ></div> --}}

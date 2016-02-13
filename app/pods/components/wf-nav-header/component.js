@@ -21,12 +21,17 @@ export default Component.extend({
   buttonIcon: 'menu',
   buttonGoToRoute: null,
   onButtonClick: null,
+
+  // Transparent Not working
+  // Scrolling on fixed transparent headers needs
+  // to observe scrollbar position.
   transparent:false,
   bgImage:'',
-  showIcon: not('showDrawerButton'),
 
+  showIcon: not('showDrawerButton'),
   showBackgroundImage: notEmpty('bgImage'),
   attributeBindings: ['style'],
+
   style: computed('bgImage', function(){
     const bgImage = get(this, 'bgImage');
     if(isEmpty(bgImage)){

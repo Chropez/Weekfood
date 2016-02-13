@@ -28,7 +28,7 @@
      color: $text-color-primary;
    }
    .remove-recipe {
-     color: lighten($gray, 30);
+     color: $secondary-text-color;
      float: right;
    }
 
@@ -42,7 +42,7 @@
        font-size: 14px;
        margin:3px 0;
       //  font-weight: bolder;
-       color: lighten($gray, 10);
+       color: $secondary-text-color;
        line-height: 20px;
    }
  }
@@ -70,5 +70,25 @@
   display: flex;
   @media (min-width: 840px){
     max-width: 300px;
+  }
+}
+
+.mdl-image-header-card {
+  background-color: $primary-color-dark;
+
+  .mdl-card__supporting-text {
+    text-align: center;
+    padding:30px;
+    .primary-text {
+      font-size: 18px;
+      color: $primary-color-text;
+      line-height: 20px;
+      margin-bottom: 10px;
+    }
+    .secondary-text {
+      font-size: 16px;
+      color: $primary-color-light;
+    }
+
   }
 }

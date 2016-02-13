@@ -3,41 +3,43 @@ body {
   font-family: $preferred_font;
 }
 
+// ----------------  header
+
+// Hides the default header
 .hidden-header {
-    display: none !important;
+  display: none !important;
 }
-
-.mdl-layout__content {
-  display: flex;
-  height: 100%;
-}
-
-.page-content {
-  display: block;
-  width: 100%;
-  position: relative;
-}
-
-.page-header {
-  padding:8px;
-  h1 {
-    font-size: 30px;
-    color: $gray;
-    margin: 0;
-  }
-}
-
+// Hides the default drawer button
 #hidden-drawer-button {
   display: none;
 }
 
-.mdl-layout__header.wf-header-with-icon {
+
+.mdl-layout__header {
   flex-direction: row;
   position: relative;
-  background-position: 0px -100px;
-  background-repeat: no-repeat;
-  background-position: 0 -50px;
-  background-size: cover;
+
+  .row-break {
+    height: 0;
+    width: 100%;
+  }
+}
+
+// Header right aligned buttons
+.wf-header-button-right {
+  height: 48px;
+  width: 35px;
+  line-height: 50px;
+  margin:8px 12px 8px auto;
+
+  button.mdl-button {
+    color: white;
+  }
+}
+
+// header with custom icon
+.mdl-layout__header.wf-header-with-icon {
+  flex-wrap: wrap;
 
   .wf-header-button {
     position: relative !important;
@@ -50,41 +52,8 @@ body {
   }
 }
 
-.mdl-layout__header--transparent::before{
-  content:"";
-  background: rgba(0, 0, 0, 0.29);
-  position: absolute;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-}
-.mdl-layout__header--transparent {
-  background-size:cover;
-
-  // phone
-  @media (max-width: $grid-tablet-breakpoint - 1) {
-    height:130px;
-  }
-
-  // tablet
-  @media (min-width: $grid-tablet-breakpoint) {
-      height:225px;
-  }
-
-}
-
-.mdl-card__supporting-text {
-  padding:12px;
-}
-
-.mdl-layout__drawer {
-  // border-right: none;
-}
-
 // Drawer button... taken from mdl css
 .mdl-layout__drawer-button, .wf-header-button {
-
   i {
     margin-top: 13px;
   }
@@ -137,6 +106,121 @@ body {
   }
 }
 
+@media screen and (min-width: $layout-screen-size-threshold + 1px) {
+  .wf-header-menu-button {
+    display:none;
+  }
+}
+
+// ---------------- Page content
+.mdl-layout__content {
+  display: flex;
+  height: 100%;
+}
+
+.page-content {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
 .mdl-layout__drawer.is-visible ~ .mdl-layout__content.mdl-layout__content {
     overflow: auto;
 }
+
+
+// tmp remove
+// .page-header {
+//   padding:8px;
+//   h1 {
+//     font-size: 30px;
+//     color: $gray;
+//     margin: 0;
+//   }
+// }
+
+// ---------------- Mdl cards
+.mdl-card__supporting-text {
+  padding:12px;
+}
+
+.mdl-card__title .mdl-card__title-text{
+  color: $primary-color-dark;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.mdl-card.mdl-full-width-card {
+  width: 100%;
+  color: white;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  min-height: 30px;
+
+  .mdl-card__title {
+    padding-bottom: 0;
+  }
+
+  .mdl-card__supporting-text {
+    padding: 12px 15px;
+  }
+}
+
+.mdl-image-header-card {
+
+  .mdl-card__title {
+    padding:0;
+    background-repeat: no-repeat;
+    background-position-y: calc(15%);
+    background-size: cover;
+
+    & > div {
+      margin-top: auto;
+      padding: 10px 30px;
+      font-size: 24px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.25);
+      width: 100%;
+    }
+    // phone
+    @media (max-width: $grid-tablet-breakpoint - 1) {
+      height:160px;
+    }
+
+    // tablet
+    @media (min-width: $grid-tablet-breakpoint) {
+        height:225px;
+    }
+  }
+}
+
+
+// ---------------- transparent header... not working completly
+// .mdl-layout__header--transparent::before{
+//   content:"";
+//   background: rgba(0, 0, 0, 0.29);
+//   position: absolute;
+//   top:0;
+//   right:0;
+//   bottom:0;
+//   left:0;
+// }
+//
+// .mdl-layout__header--transparent {
+//   background-size:cover;
+//
+//   &.mdl-layout__header {
+//     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+//   }
+//
+//   // phone
+//   @media (max-width: $grid-tablet-breakpoint - 1) {
+//     height:160px;
+//   }
+//
+//   // tablet
+//   @media (min-width: $grid-tablet-breakpoint) {
+//       height:225px;
+//   }
+//   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+// }

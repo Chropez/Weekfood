@@ -2,23 +2,13 @@ import Ember from 'ember';
 
 const {
   Component,
-  computed,
-  get,
-  Handlebars: { SafeString },
-  isEmpty
+  get
 } = Ember;
 
 export default Component.extend({
   recipe:null,
   classNames: 'mdl-card mdl-shadow--2dp recipe-card',
   defaultImageUrl: 'img/empty-plate.png',
-
-  imageStyle: computed('recipe.imageUrl', function() {
-    const defaultImageUrl = get(this, 'defaultImageUrl');
-    const imageUrl = get(this, 'recipe.imageUrl') ;
-    const imageToUse = isEmpty(imageUrl) ? defaultImageUrl : imageUrl;
-    return new SafeString(`background-image: url('${imageToUse}')`);
-  }),
 
   actions: {
     edit() {

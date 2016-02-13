@@ -1,11 +1,40 @@
-{{wf-nav-header
-  buttonIcon='arrow_back'
-  buttonGoToRoute='recipes'
-  transparent=true
-  bgImage=model.imageUrl}}
+{{#wf-nav-header buttonIcon='arrow_back' buttonGoToRoute='recipes' title=model.name}}
+  <div class="wf-header-button-right">
+    {{#mdl-menu align='bottom-right' class='wf-nav-menu' }}
+      {{#mdl-menu-item action='goToEdit'}}Edit{{/mdl-menu-item}}
+    {{/mdl-menu}}
+  </div>
+{{/wf-nav-header}}
 
 {{#wf-content}}
-  <div class="mdl-grid">
+  <div class="mdl-image-header-card mdl-full-width-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title" style="{{safestring-bgimage model.imageUrl}}">
+      {{!-- <div>
+        {{model.name}}
+      </div> --}}
+    </div>
+    <div class="mdl-card__supporting-text">
+      {{#if model.description}}
+        <div class="primary-text">
+          {{model.description}}
+        </div>
+      {{/if}}
+      <div class="secondary-text">
+        by <em>{{model.author.displayName}}</em>
+      </div>
+    </div>
+  </div>
 
+  <div class="mdl-grid">
+    {{#mdl-card title="Ingredients" classNames="mdl-cell mdl-cell--12-col"}}
+      <div class="mdl-card__supporting-text">
+        {{model.description}}
+      </div>
+    {{/mdl-card}}
+    {{#mdl-card title="Instructions" classNames="mdl-cell mdl-cell--12-col"}}
+      <div class="mdl-card__supporting-text">
+        {{model.description}}
+      </div>
+    {{/mdl-card}}
   </div>
 {{/wf-content}}
