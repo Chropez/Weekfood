@@ -6,14 +6,14 @@ const {
 } = Ember;
 
 export default Component.extend({
-  recipe:null,
+  recipe: null,
   classNames: 'mdl-card mdl-shadow--2dp recipe-card',
   defaultImageUrl: 'img/empty-plate.png',
 
   actions: {
     edit() {
-        const recipe = get(this, 'recipe');
-        get(this, 'edit')(recipe);
+      const recipe = get(this, 'recipe');
+      get(this, 'edit')(recipe);
     },
     delete() {
       const recipe = get(this, 'recipe');

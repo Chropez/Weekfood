@@ -15,15 +15,14 @@ export default Ember.Route.extend({
     });
   },
 
-  setupController: function(controller, model, transition) {
+  setupController(controller, model, transition) {
     controller.set('day', model);
     controller.set('date', transition.params['calendar.date'].date);
   },
 
-  serialize(model, params){
-    var newDate = {};
+  serialize (model, params){
+    let newDate = {};
     newDate[params[0]] = moment(model.get('date')).format('YYYY-MM-DD');
-
     return newDate;
   }
 });

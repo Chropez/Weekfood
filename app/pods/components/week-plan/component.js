@@ -3,19 +3,20 @@ import moment from 'moment';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
-  week : null,
-  /* @todo: convert to observable */
-  weekDays: Ember.computed('week.days', function(){
-    const weekDateString = this.get('week.momentWeek').format('YYYY-MM-DD');
-    let weekDay = moment(weekDateString),
-        store = this.get('store'),
-        weekDays = this.get('week.days');
+  week: null,
 
-    for(let i = 0; i < 7; i++){
-      if(!this.get('week.days').findBy('id', weekDay.format('YYYY-MM-DD'))) {
+  /* @todo: convert to observable */
+  weekDays: Ember.computed('week.days', function() {
+    const weekDateString = this.get('week.momentWeek').format('YYYY-MM-DD');
+    let weekDay = moment(weekDateString) ;
+    let store = this.get('store') ;
+    let weekDays = this.get('week.days') ;
+
+    for (let i = 0; i < 7; i++){
+      if (!this.get('week.days').findBy('id', weekDay.format('YYYY-MM-DD'))) {
         const newDay = store.createRecord('day', {
-          date : new Date(weekDay.format('YYYY-MM-DD')),
-          id : weekDay.format('YYYY-MM-DD')
+          date: new Date(weekDay.format('YYYY-MM-DD')),
+          id: weekDay.format('YYYY-MM-DD')
         });
 
         weekDays.addObject(newDay);
@@ -25,16 +26,16 @@ export default Ember.Component.extend({
     return this.get('week.days').sortBy('date');
   }),
 
-  prevWeek : Ember.computed('week', function() {
+  prevWeek: Ember.computed('week', function() {
     return moment(this.get('week.momentWeek')).subtract(1, 'week').week();
   }),
-  nextWeek : Ember.computed('week', function() {
+  nextWeek: Ember.computed('week', function() {
     return moment(this.get('week.momentWeek')).add(1, 'week').week();
   }),
-  prevWeekYear : Ember.computed('week', function() {
+  prevWeekYear: Ember.computed('week', function() {
     return moment(this.get('week.momentWeek')).subtract(1, 'week').weekYear();
   }),
-  nextWeekYear : Ember.computed('week', function() {
+  nextWeekYear: Ember.computed('week', function() {
     return moment(this.get('week.momentWeek')).add(1, 'week').weekYear();
   })
 });

@@ -13,11 +13,11 @@ export default MdlNav.extend({
   title: 'Weekfood',
 
   // mdlNav settings
-  fixedDrawer:true,
-  fixedHeader:true,
-  includeDrawerTitle:false,
-  includeHeaderLinks:false,
-  closeDrawerOnItemClick:true,
+  fixedDrawer: true,
+  fixedHeader: true,
+  includeDrawerTitle: false,
+  includeHeaderLinks: false,
+  closeDrawerOnItemClick: true,
 
   didInsertElement() {
     this._super(...arguments);

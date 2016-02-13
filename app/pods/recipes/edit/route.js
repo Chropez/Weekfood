@@ -6,8 +6,8 @@ const {
 } = Ember;
 
 export default Route.extend({
-  model({recipe_id}) {
-    return this.store.find('recipe', recipe_id);
+  model({ recipeId }) {
+    return this.store.find('recipe', recipeId);
   },
 
   actions: {
@@ -15,7 +15,7 @@ export default Route.extend({
       const author = get(this, 'session.currentUser');
       recipe.save().then(() => {
         author.save().then(() => {
-          this.transitionTo('recipes');
+          this.transitionTo('recipes.recipe', recipe);
         });
       });
     },

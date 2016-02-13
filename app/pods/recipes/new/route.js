@@ -9,16 +9,16 @@ export default Route.extend({
   model() {
     const author = get(this, 'session.currentUser');
     const store  = get(this, 'store');
-    
+
     return store.createRecord('recipe', { author });
   },
 
   actions: {
     saveRecipe(recipe) {
       const author = get(this, 'session.currentUser');
-      recipe.save().then(() => {
+      recipe.save().then((newRecipe) => {
         author.save().then(() => {
-          this.transitionTo('recipes');
+          this.transitionTo('recipes', newRecipe);
         });
       });
     },

@@ -25,16 +25,16 @@ export default Component.extend({
   // Transparent Not working
   // Scrolling on fixed transparent headers needs
   // to observe scrollbar position.
-  transparent:false,
-  bgImage:'',
+  transparent: false,
+  bgImage: '',
 
   showIcon: not('showDrawerButton'),
   showBackgroundImage: notEmpty('bgImage'),
   attributeBindings: ['style'],
 
-  style: computed('bgImage', function(){
+  style: computed('bgImage', function() {
     const bgImage = get(this, 'bgImage');
-    if(isEmpty(bgImage)){
+    if (isEmpty(bgImage)) {
       return new SafeString('');
     }
     return new SafeString(`background-image: url('${bgImage}')`);
@@ -54,7 +54,7 @@ export default Component.extend({
 
     buttonAction() {
       const onButtonClick = get(this, 'onButtonClick');
-      if(onButtonClick){
+      if (onButtonClick) {
         onButtonClick();
       }
     }

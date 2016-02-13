@@ -9,8 +9,8 @@ Router.map(function() {
   this.route('sign-in', {});
   this.authenticatedRoute('recipes', {}, function() {
     this.authenticatedRoute('new', {});
-    this.authenticatedRoute('edit', { path: 'edit/:recipe_id' });
-    this.authenticatedRoute('recipe', { path: ':recipe_id' });
+    this.authenticatedRoute('edit', { path: 'edit/:recipeId' });
+    this.authenticatedRoute('recipe', { path: ':recipeId' });
   });
 
   this.authenticatedRoute('calendar', {}, function() {

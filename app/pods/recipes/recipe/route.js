@@ -5,7 +5,7 @@ const {
 } = Ember;
 
 export default Route.extend({
-  model({recipe_id}) {
-    return this.store.find('recipe', recipe_id);
+  model({ recipeId }) {
+    return this.store.find('recipe', recipeId);
   }
 });
