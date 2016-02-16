@@ -1,0 +1,10 @@
+<ul>
+  {{#each ingredients as |ingredient|}}
+    <li>
+      <strong>{{ingredient.amount}}{{ingredient.unit}}</strong> {{ingredient.name}}
+    </li>
+  {{/each}}
+</ul>
+
+{{mdl-textfield label="New Ingredient" value=input}}
+{{mdl-button isFloating=true icon='add' isMiniFab=true action='addIngredient'}}

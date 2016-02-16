@@ -8,9 +8,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('sign-in', {});
   this.authenticatedRoute('recipes', {}, function() {
-    this.authenticatedRoute('new', {});
-    this.authenticatedRoute('edit', { path: 'edit/:recipeId' });
-    this.authenticatedRoute('recipe', { path: ':recipeId' });
+    this.authenticatedRoute('new');
+    this.authenticatedRoute('edit', { path: 'edit/:id' });
+    this.authenticatedRoute('recipe', { path: ':id' });
   });
 
   this.authenticatedRoute('calendar', {}, function() {

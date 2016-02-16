@@ -1,14 +1,19 @@
-<div class="mdl-card__title">
-  <h2 class="mdl-card__title-text">{{title}}</h2>
-</div>
+
 <div class="mdl-card__supporting-text">
-  <form {{action "addRecipe" on="submit"}}>
     <div>
-      {{mdl-textfield label="Name" value=recipe.name}}
+      {{mdl-textfield label="Name" value=recipe.name isLabelFloating=true}}
     </div>
     <div>
       {{mdl-textfield label="Description" value=recipe.description}}
     </div>
+    <div>
+      {{mdl-textfield label="Time to make" value=recipe.cookTime}}
+    </div>
+
+    <div>
+      {{mdl-textfield label="Servings" value=recipe.servings}}
+    </div>
+
     <div>
       {{mdl-textfield label="Link to Image" value=recipe.imageUrl}}
     </div>
@@ -18,7 +23,31 @@
              style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')">
         </div>
     {{/if}}
-  </form>
+
+</div>
+
+{{!-- Ingredients --}}
+<ul>
+  {{#each recipe.ingredients as |ingredient|}}
+    <li>
+      {{ingredient.name}}
+    </li>
+  {{/each}}
+</ul>
+
+<div class="mdl-card__title">
+  <h3 class="mdl-card__title-text">Ingredients</h3>
+</div>
+<div class="mdl-card__supporting-text">
+  {{ingredients-editor ingredients=recipe.ingredients}}
+</div>
+
+{{!-- Instructions --}}
+<div class="mdl-card__title">
+  <h3 class="mdl-card__title-text">Instructions</h3>
+</div>
+<div class="mdl-card__supporting-text">
+  {{mdl-textarea label="Ramblings" value=recipe.instructions}}
 </div>
 
 {{#mdl-card-actions classNames="p15"}}
