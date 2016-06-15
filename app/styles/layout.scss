@@ -128,17 +128,6 @@ body {
     overflow: auto;
 }
 
-
-// tmp remove
-// .page-header {
-//   padding:8px;
-//   h1 {
-//     font-size: 30px;
-//     color: $gray;
-//     margin: 0;
-//   }
-// }
-
 // ---------------- Mdl cards
 .mdl-card__supporting-text {
   padding:12px;
@@ -167,7 +156,6 @@ body {
 }
 
 .mdl-image-header-card {
-
   .mdl-card__title {
     padding:0;
     background-repeat: no-repeat;
@@ -193,34 +181,3 @@ body {
     }
   }
 }
-
-
-// ---------------- transparent header... not working completly
-// .mdl-layout__header--transparent::before{
-//   content:"";
-//   background: rgba(0, 0, 0, 0.29);
-//   position: absolute;
-//   top:0;
-//   right:0;
-//   bottom:0;
-//   left:0;
-// }
-//
-// .mdl-layout__header--transparent {
-//   background-size:cover;
-//
-//   &.mdl-layout__header {
-//     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-//   }
-//
-//   // phone
-//   @media (max-width: $grid-tablet-breakpoint - 1) {
-//     height:160px;
-//   }
-//
-//   // tablet
-//   @media (min-width: $grid-tablet-breakpoint) {
-//       height:225px;
-//   }
-//   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-// }

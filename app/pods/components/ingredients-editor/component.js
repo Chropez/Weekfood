@@ -6,8 +6,6 @@ const {
   get,
   inject: { service },
   isEmpty
-  // ,
-  // set
 } = Ember ;
 
 export default Component.extend({
@@ -17,14 +15,14 @@ export default Component.extend({
 
   actions: {
     addIngredient() {
-      const input = get(this, 'input') ;
+      const input = get(this, 'input');
       if(isEmpty(input)) {
-        console.log("Can't add ingredient") ;
+        console.log("Can't add ingredient");
         return;
       }
 
-      const store = get(this, 'store');
-      const ingredients = get(this, 'ingredients') ;
+      const store       = get(this, 'store');
+      const ingredients = get(this, 'ingredients');
 
       const newIngredient = store.createRecord('ingredient', { text: input });
       ingredients.addObject(newIngredient);

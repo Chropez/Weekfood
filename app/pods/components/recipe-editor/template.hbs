@@ -1,15 +1,16 @@
-
-<div class="mdl-card__supporting-text">
-    <div>
-      {{mdl-textfield label="Name" value=recipe.name isLabelFloating=true}}
-    </div>
-    <div>
-      {{mdl-textfield label="Description" value=recipe.description}}
-    </div>
-    <div>
-      {{mdl-textfield label="Time to make" value=recipe.cookTime}}
-    </div>
-
+<div class="mdl-grid mdl-layout">
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--5-col-desktop mdl-cell--2-offset-desktop mdl-cell--order-2-desktop">
+      <div>
+        {{mdl-textfield label="Name" value=recipe.name isLabelFloating=true}}
+      </div>
+      <div>
+        {{wf-mdl-textarea label="Description" value=recipe.description rows=3}}
+      </div>
+      <div>
+        {{mdl-textfield label="Time to make" value=recipe.cookTime}}
+      </div>
+  </div>
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--5-col-desktop mdl-cell--order-1-desktop">
     <div>
       {{mdl-textfield label="Servings" value=recipe.servings}}
     </div>
@@ -23,34 +24,31 @@
              style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')">
         </div>
     {{/if}}
+  </div>
 
-</div>
+    {{!-- Ingredients --}}
+    <div class="mdl-card__title">
+      <h3 class="mdl-card__title-text">Ingredients</h3>
+    </div>
+    <div class="mdl-card__supporting-text">
+      {{wf-mdl-textarea label="Ingredients" value=recipe.ingredients rows=10}}
+    </div>
 
-{{!-- Ingredients --}}
-<ul>
-  {{#each recipe.ingredients as |ingredient|}}
-    <li>
-      {{ingredient.name}}
-    </li>
-  {{/each}}
-</ul>
+    {{!-- {{ingredient-viewer recipe.ingredients}} --}}
+    {{!-- Instructions --}}
+    <div class="mdl-card__title">
+      <h3 class="mdl-card__title-text">Instructions</h3>
+    </div>
 
-<div class="mdl-card__title">
-  <h3 class="mdl-card__title-text">Ingredients</h3>
-</div>
-<div class="mdl-card__supporting-text">
-  {{ingredients-editor ingredients=recipe.ingredients}}
-</div>
+    <div class="mdl-card__supporting-text">
+      {{wf-mdl-textarea label="Instructions" value=recipe.instructions rows=10}}
+      <div>
+        {{!-- {{md-text text=recipe.instructions}} --}}
+      </div>
+    </div>
 
-{{!-- Instructions --}}
-<div class="mdl-card__title">
-  <h3 class="mdl-card__title-text">Instructions</h3>
+    {{#mdl-card-actions classNames="p15"}}
+      {{mdl-button text="Save" isRaised=true action="addRecipe"}}
+      <!-- {{mdl-button text="Cancel"}} -->
+    {{/mdl-card-actions}}
 </div>
-<div class="mdl-card__supporting-text">
-  {{mdl-textarea label="Ramblings" value=recipe.instructions}}
-</div>
-
-{{#mdl-card-actions classNames="p15"}}
-  {{mdl-button text="Save" isRaised=true action="addRecipe"}}
-  <!-- {{mdl-button text="Cancel"}} -->
-{{/mdl-card-actions}}

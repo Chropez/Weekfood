@@ -4,18 +4,16 @@ const {
   Model,
   attr,
   belongsTo,
-  hasMany
 } = DS;
 
 export default Model.extend({
-  name: attr('string'),
-  description: attr('string'),
-  cookTime: attr('number'),
+  name        : attr('string'),
+  description : attr('string'),
+  cookTime    : attr('number'),
+  servings    : attr('number'),
+  imageUrl    : attr('string'),
   ovenTemperature: attr('number'),
-  servings: attr('number'),
-  imageUrl: attr('string'),
-
-  ingredients: hasMany(),
+  ingredients : attr('string'),
   instructions: attr('string'),
-  author: belongsTo('user')
+  author      : belongsTo('user')
 });
