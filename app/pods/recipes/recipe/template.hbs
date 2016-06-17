@@ -28,12 +28,12 @@
   <div class="mdl-grid">
     {{#mdl-card title="Ingredients" classNames="mdl-cell mdl-cell--12-col"}}
       <div class="mdl-card__supporting-text">
-        {{model.description}}
+        {{ingredient-viewer model.ingredients}}
       </div>
     {{/mdl-card}}
     {{#mdl-card title="Instructions" classNames="mdl-cell mdl-cell--12-col"}}
       <div class="mdl-card__supporting-text">
-        {{model.description}}
+        {{ingredient-viewer model.instructions}}
       </div>
     {{/mdl-card}}
   </div>

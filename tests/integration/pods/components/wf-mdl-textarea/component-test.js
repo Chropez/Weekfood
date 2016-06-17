@@ -5,21 +5,10 @@ moduleForComponent('wf-mdl-textarea', 'Integration | Component | wf mdl textarea
   integration: true
 });
 
-test('it renders', function(assert) {
-  
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
-  this.render(hbs`{{wf-mdl-textarea}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:" + EOL +
-  this.render(hbs`
-    {{#wf-mdl-textarea}}
-      template block text
-    {{/wf-mdl-textarea}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+test('sets correct textarea attributes', function(assert) {
+  this.placeholder = 'one\ntwo';
+  this.rows = 5;
+  this.render(hbs`{{wf-mdl-textarea placeholder=placeholder rows=rows}}`);
+  assert.equal(this.$('textarea').prop('placeholder'), this.placeholder);
+  assert.equal(this.$('textarea').prop('rows'), this.rows);
 });

@@ -1,3 +1,7 @@
 .mdl-textfield {
   width: 100%;
 }
+
+.mdl-textfield textarea:placeholder {
+  color:red;
+}

@@ -1,13 +1,16 @@
-{{#week-plan week=week as |weekPlanner|}}
-  {{#link-to 'calendar.week' weekPlanner.prevWeekYear weekPlanner.prevWeek}}Previous{{/link-to}}
-  {{#link-to 'calendar.week' weekPlanner.nextWeekYear weekPlanner.nextWeek}}Next{{/link-to}}
+{{wf-nav-header title="Calendar"}}
+{{#wf-content}}
+  {{#week-plan week=week as |weekPlanner|}}
+    {{#link-to 'calendar.week' weekPlanner.prevWeekYear weekPlanner.prevWeek}}Previous{{/link-to}}
+    {{#link-to 'calendar.week' weekPlanner.nextWeekYear weekPlanner.nextWeek}}Next{{/link-to}}
 
-  <h1>Week {{week.weekNumber}}</h1>
+    <h1>Week {{week.weekNumber}}</h1>
 
-  {{#each weekPlanner.weekDays as |day|}}
-    {{#week-day day=day}}
-    {{/week-day}}
-  {{/each}}
+    {{#each weekPlanner.weekDays as |day|}}
+      {{#week-day day=day}}
+      {{/week-day}}
+    {{/each}}
 
-  {{outlet}}
-{{/week-plan}}
+    {{outlet}}
+  {{/week-plan}}
+{{/wf-content}}

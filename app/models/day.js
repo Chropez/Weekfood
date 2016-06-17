@@ -8,5 +8,6 @@ const {
 
 export default Model.extend({
   date: attr('date'),
-  recipe: belongsTo('recipe')
+  recipe: belongsTo(),
+  user: belongsTo()
 });

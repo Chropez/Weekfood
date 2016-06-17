@@ -1,0 +1,12 @@
+<h2>Days</h2>
+{{#each model as |day|}}
+  {{day.date}} <br>
+{{/each}}
+
+<hr>
+
+<h2>Add day</h2>
+{{mdl-textfield value=date}}
+{{mdl-button isRaised=true text="save" action="saveDay"}}
+
+{{outlet}}

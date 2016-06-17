@@ -17,6 +17,7 @@ Router.map(function() {
     this.authenticatedRoute('week', { path: ':year/week/:week' });
     this.authenticatedRoute('date', { path: ':date' });
   });
+  this.authenticatedRoute('day');
 });
 
 export default Router;

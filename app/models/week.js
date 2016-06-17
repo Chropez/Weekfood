@@ -13,7 +13,7 @@ const { computed } = Ember;
 export default Model.extend({
   year: attr('number'),
   weekNumber: attr('number'),
-  days: hasMany('day'),
+  days: hasMany(),
 
   momentWeek: computed('year', 'weekNumber', function() {
     const weekNumber = this.get('weekNumber');
