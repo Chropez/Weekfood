@@ -1,9 +1,31 @@
 import Ember from 'ember';
+import moment from 'moment';
+import { formatUserDateKey } from 'weekfood/models/day';
 
-export default Ember.Route.extend({
+const {
+  get,
+  Route
+} = Ember;
+
+export default Route.extend({
   model({ year, week }) {
-    //return this.store.find('day');
-    return this.fetchOrCreateWeek(year, week);
+    const userId    = get(this, 'session.currentUser.id');
+    const weekDate  = moment(`${year}${week}`, 'YYYYww');
+    const startAt   = formatUserDateKey(userId, weekDate.startOf('isoweek'));
+    const endAt     = formatUserDateKey(userId, weekDate.endOf('isoweek'));
+
+    return this.store.query('day', {
+      orderBy: '_userDateKey',
+      startAt,
+      endAt
+    });
+  },
+
+  setupController(controller, model, transition) {
+    const year = transition.params['calendar.week'].year;
+    const week = transition.params['calendar.week'].week;
+    controller.set('year', year);
+    controller.set('week', week);
   },
 
   fetchOrCreateWeek(year, weekNumber) {
@@ -20,20 +42,5 @@ export default Ember.Route.extend({
 
         return newWeek;
       });
-  },
-
-  /* jshint unused: false */
-  saveWeek(week) {
-    /*user.get('weeks').addObject(newWeek);
-    return newWeek.save().then((savedWeek) => {
-      user.save();
-      return savedWeek;
-    });*/
-  },
-
-  actions: {
-    saveWeek(week) {
-      this.saveWeek(week);
-    }
   }
 });

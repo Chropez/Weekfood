@@ -1,6 +1,6 @@
 <h2>Days</h2>
 {{#each model as |day|}}
-  {{day.date}} <br>
+  {{moment-format day.date 'YYYY-MM-DD'}} <br>
 {{/each}}
 
 <hr>

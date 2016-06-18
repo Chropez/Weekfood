@@ -9,19 +9,9 @@ const {
 export default Model.extend({
   /*firstName: DS.attr('string'),
   lastName: DS.attr('string'),*/
-  displayName: attr('string'),
-
-  email: attr('string'),
-  created: attr('number'),
-
-  avatar: attr('string'),
-
-  weeks: hasMany('week'),
-  recipes: hasMany('recipe'),
-
-  // Utility functions
-  generateWeekId(year, week) {
-    const userId = this.get('id');
-    return `${userId}-${year}-${week}`;
-  }
+  avatar      : attr('string'),
+  created     : attr('number'),
+  displayName : attr('string'),
+  email       : attr('string'),
+  recipes     : hasMany('recipe')
 });

@@ -7,11 +7,10 @@ export default Ember.Controller.extend({
   date: '2016-06-16',
   actions: {
     saveDay() {
-      const dateString = get(this, 'date');
+      const date = moment(get(this, 'date'))._d;
       const user = get(this, 'session.currentUser');
-      const date = new moment(dateString)._d;
-      debugger;
-      this.store.createRecord('day', { date, user }).save();
+      const record = this.store.createRecord('day', { date, user });
+      record.save();
     }
   }
 });

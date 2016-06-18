@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   beforeModel() {
     const date = moment();
     const year = date.year();
-    const week = date.week();
+    const week = date.isoWeek();
     this.transitionTo('calendar.week', year, week);
   }
 });

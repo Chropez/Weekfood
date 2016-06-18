@@ -1,6 +1,9 @@
 {{wf-nav-header title="Calendar"}}
 {{#wf-content}}
-  {{#week-plan week=week as |weekPlanner|}}
+  {{#week-planner week=model as |day|}}
+  {{year}} - {{week}}
+  {{/week-planner}}
+  {{!-- {{#week-plan week=model as |weekPlanner|}}
     {{#link-to 'calendar.week' weekPlanner.prevWeekYear weekPlanner.prevWeek}}Previous{{/link-to}}
     {{#link-to 'calendar.week' weekPlanner.nextWeekYear weekPlanner.nextWeek}}Next{{/link-to}}
 
@@ -12,5 +15,5 @@
     {{/each}}
 
     {{outlet}}
-  {{/week-plan}}
+  {{/week-plan}} --}}
 {{/wf-content}}
