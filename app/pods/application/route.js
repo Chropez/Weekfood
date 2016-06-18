@@ -9,11 +9,11 @@ export default Route.extend({
 
   beforeModel() {
     return this.get('session')
-       .fetch()
-       .catch(() => {
-         // not logged in
-         this.transitionTo('sign-in');
-       });
+      .fetch()
+      .catch(() => {
+        // not logged in
+        this.transitionTo('sign-in');
+      });
   },
 
   setupController(...args) {
@@ -24,18 +24,20 @@ export default Route.extend({
   actions: {
     signIn(provider) {
       this.get('session')
-          .open('firebase', { provider })
-          .then(() => {
-            this.transitionTo('recipes');
-          });
+        .open('firebase', {
+          provider
+        })
+        .then(() => {
+          this.transitionTo('recipes');
+        });
     },
 
     signOut() {
       this.get('session')
-      .close()
-      .then(() => {
-        this.transitionTo('sign-in');
-      });
+        .close()
+        .then(() => {
+          this.transitionTo('sign-in');
+        });
     },
 
     accessDenied() {

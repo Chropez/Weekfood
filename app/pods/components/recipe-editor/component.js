@@ -12,7 +12,7 @@ export default Component.extend({
 
   actions: {
     addRecipe() {
-      const recipe = get(this, 'recipe');
+      let recipe = get(this, 'recipe');
       get(this, 'saveRecipe')(recipe);
     }
   }

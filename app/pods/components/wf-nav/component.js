@@ -21,8 +21,8 @@ export default MdlNav.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    const wfNav = get(this, 'wfNav');
-    const mdlComponent = get(this, '_mdlComponent');
+    let wfNav = get(this, 'wfNav');
+    let mdlComponent = get(this, '_mdlComponent');
     wfNav.setMdlComponent(mdlComponent);
   },
 

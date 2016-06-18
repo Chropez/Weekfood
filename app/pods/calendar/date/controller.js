@@ -1,9 +1,10 @@
 import Ember from 'ember';
+const { Controller } = Ember;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   actions: {
     didPickDish(dish) {
-      const day = this.get('day');
+      let day = this.get('day');
       return true;
     }
   }

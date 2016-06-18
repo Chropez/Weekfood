@@ -6,9 +6,9 @@ const {
 } = Ember;
 
 export default Route.extend({
-  model(){
-    const store  = get(this, 'store'),
-          userId = get(this, 'session.currentUser.id');
+  model() {
+    let store  = get(this, 'store');
+    let userId = get(this, 'session.currentUser.id');
     return store.query('recipe', { orderBy: 'author', equalTo: userId });
   },
   actions: {

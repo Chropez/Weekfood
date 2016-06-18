@@ -1,7 +1,11 @@
 import Ember from 'ember';
+const {
+  Component,
+  inject: { service }
+} = Ember;
 
-export default Ember.Component.extend({
-  session: Ember.inject.service(),
+export default Component.extend({
+  session: service(),
 
   dishes: null,
   dish: null,
@@ -10,7 +14,7 @@ export default Ember.Component.extend({
   isPickingDish: false,
 
   actions: {
-    toggleIsPickingDish (){
+    toggleIsPickingDish () {
       this.set('isPickingDish', !this.get('isPickingDish'));
       if (!this.get('dishesFetched')) {
         this.set('dishes', this.get('session.currentUser.recipes'));

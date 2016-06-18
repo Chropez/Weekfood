@@ -8,10 +8,10 @@ const {
 
 export default MdlTextArea.extend({
   formattedPlaceholder: computed('placholder', function() {
-    const placeholder = get(this, 'placeholder');
-    if(placeholder) {
+    let placeholder = get(this, 'placeholder');
+    if (placeholder) {
       return placeholder.replace(/\\n/g, '\n');
     }
-    return ;
+    return;
   })
 });

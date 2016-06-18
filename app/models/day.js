@@ -20,7 +20,8 @@ export default Model.extend({
   recipe: belongsTo(),
   user: belongsTo(),
 
-  /**
+  /*
+   *
    * hack for easier firebase query
    */
   _userDateKey: attr('string'),
@@ -33,6 +34,6 @@ export default Model.extend({
 });
 
 export function formatUserDateKey(userId, date) {
-  const formattedDate = moment(date).format('YYYY-MM-DD');
+  let formattedDate = moment(date).format('YYYY-MM-DD');
   return `${userId}-${formattedDate}`;
 }

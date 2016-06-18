@@ -1,11 +1,13 @@
 import Ember from 'ember';
 import moment from 'moment';
 
-export default Ember.Route.extend({
+const { Route } = Ember;
+
+export default Route.extend({
   beforeModel() {
-    const date = moment();
-    const year = date.year();
-    const week = date.isoWeek();
+    let date = moment();
+    let year = date.year();
+    let week = date.isoWeek();
     this.transitionTo('calendar.week', year, week);
   }
 });

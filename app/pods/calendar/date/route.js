@@ -1,12 +1,13 @@
 import Ember from 'ember';
 import moment from 'moment';
+const { Route } = Ember;
 
-export default Ember.Route.extend({
+export default Route.extend({
   model(params) {
-    const day  = moment(params.day);
-    const week = day.week();
-    const year = day.year();
-    const weekId = this.get('session.currentUser').generateWeekId(year, week);
+    let day  = moment(params.day);
+    let week = day.week();
+    let year = day.year();
+    let weekId = this.get('session.currentUser').generateWeekId(year, week);
 
     return this.store.find('week', weekId).then((week) => {
       return week.get('days');

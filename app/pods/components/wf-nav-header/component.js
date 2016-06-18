@@ -33,7 +33,7 @@ export default Component.extend({
   attributeBindings: ['style'],
 
   style: computed('bgImage', function() {
-    const bgImage = get(this, 'bgImage');
+    let bgImage = get(this, 'bgImage');
     if (isEmpty(bgImage)) {
       return new SafeString('');
     }
@@ -53,7 +53,7 @@ export default Component.extend({
     },
 
     buttonAction() {
-      const onButtonClick = get(this, 'onButtonClick');
+      let onButtonClick = get(this, 'onButtonClick');
       if (onButtonClick) {
         onButtonClick();
       }

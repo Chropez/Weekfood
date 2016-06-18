@@ -6,27 +6,26 @@ const {
 } = Ember;
 
 export default function getOrCreateUser(authData, store) {
-  const authUserProps = extractUserProperties(authData);
+  let authUserProps = extractUserProperties(authData);
   return store.find('user', authData.uid)
     .then((user) => {
       // Check if any user values have changed
-      if(userHasChanged(user, authUserProps)) {
+      if (userHasChanged(user, authUserProps)) {
         user.setProperties(authUserProps);
         return user.save();
       }
       return user;
     })
     .catch(() => {
-        authUserProps['created'] = new Date().getTime();
-        let newUser = store.createRecord('user', authUserProps);
-        return newUser.save();
+      authUserProps.created = new Date().getTime();
+      let newUser = store.createRecord('user', authUserProps);
+      return newUser.save();
     });
 }
 
-
 function extractUserProperties(authData) {
   let name = 'Unknown';
-  const provider = authData.provider;
+  let { provider } = authData;
   let userData = authData[provider];
   let avatar = userData.profileImageURL;
 
@@ -44,9 +43,9 @@ function extractUserProperties(authData) {
   };
 }
 
-function userHasChanged(user, authProps){
-  const userProps = getProperties(user, 'avatar', 'displayName', 'email') ;
+function userHasChanged(user, authProps) {
+  let userProps = getProperties(user, 'avatar', 'displayName', 'email');
   return userProps.avatar       !== authProps.avatar      ||
          userProps.displayName  !== authProps.displayName ||
-         userProps.email        !== authProps.email ;
+         userProps.email        !== authProps.email;
 }

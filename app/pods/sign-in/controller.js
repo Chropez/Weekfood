@@ -9,6 +9,6 @@ export default Controller.extend({
     },
     signInWithGoogle() {
       this.send('signIn', 'google');
-    },
+    }
   }
 });

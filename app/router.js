@@ -1,11 +1,14 @@
 import Ember from 'ember';
 import config from './config/environment';
 
-const Router = Ember.Router.extend({
-  location: config.locationType
+const { Router } = Ember;
+const { locationType } = config;
+
+const router = Router.extend({
+  location: locationType
 });
 
-Router.map(function() {
+router.map(function() {
   this.route('sign-in', {});
   this.authenticatedRoute('recipes', {}, function() {
     this.authenticatedRoute('new');
@@ -20,4 +23,4 @@ Router.map(function() {
   this.authenticatedRoute('day');
 });
 
-export default Router;
+export default router;

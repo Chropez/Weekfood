@@ -16,8 +16,8 @@ export default Service.extend({
   },
 
   toggleDrawer() {
-    const mdlComponent = get(this, '_mdlComponent');
-    if(!isEmpty(mdlComponent)){
+    let mdlComponent = get(this, '_mdlComponent');
+    if (!isEmpty(mdlComponent)) {
       mdlComponent.drawerToggleHandler_();
     }
   }

@@ -12,11 +12,11 @@ export default Component.extend({
 
   actions: {
     edit() {
-      const recipe = get(this, 'recipe');
+      let recipe = get(this, 'recipe');
       get(this, 'edit')(recipe);
     },
     delete() {
-      const recipe = get(this, 'recipe');
+      let recipe = get(this, 'recipe');
       get(this, 'delete')(recipe);
     }
   }

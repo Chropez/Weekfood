@@ -1,17 +1,24 @@
 import Ember from 'ember';
-import getOrCreateUser from '../utils/get-or-create-user' ;
+import getOrCreateUser from '../utils/get-or-create-user';
 
 const {
   get,
-  inject: { service }
+  inject: { service },
+  RSVP: {
+    Promise: {
+      reject,
+      resolve
+    }
+  }
 } = Ember;
 
+// jscs:ignore disallowDirectPropertyAccess
 export default Ember.Object.extend({
   firebase: service(),
   store: service(),
 
   open(authData) {
-    const store = get(this, 'store');
+    let store = get(this, 'store');
     return getOrCreateUser(authData, store)
       .then((user) => {
         return { currentUser: user };
@@ -22,9 +29,9 @@ export default Ember.Object.extend({
     let authData = ref.getAuth();
 
     if (!authData) {
-      return Ember.RSVP.Promise.reject(new Error('No Firebase session found'));
+      return reject(new Error('No Firebase session found'));
     }
-    const store = get(this, 'store');
+    let store = get(this, 'store');
     return getOrCreateUser(authData, store)
       .then((user) => {
         return { currentUser: user };
@@ -32,6 +39,6 @@ export default Ember.Object.extend({
   },
   close() {
     this.get('firebase').unauth();
-    return Ember.RSVP.Promise.resolve({ currentUser: null });
+    return resolve({ currentUser: null });
   }
 });

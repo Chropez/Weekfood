@@ -12,7 +12,7 @@ export default Route.extend({
 
   actions: {
     saveRecipe(recipe) {
-      const author = get(this, 'session.currentUser');
+      let author = get(this, 'session.currentUser');
       recipe.save().then(() => {
         author.save().then(() => {
           this.transitionTo('recipes.recipe', recipe);

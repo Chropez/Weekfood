@@ -1,20 +1,27 @@
 import Ember from 'ember';
 import moment from 'moment';
 
-export default Ember.Component.extend({
-  store: Ember.inject.service(),
+const {
+  Component,
+  computed,
+  get,
+  inject: { service }
+} = Ember;
+
+export default Component.extend({
+  store: service(),
   week: null,
 
   /* @todo: convert to observable */
-  weekDays: Ember.computed('week.days', function() {
-    const weekDateString = this.get('week.momentWeek').format('YYYY-MM-DD');
-    let weekDay = moment(weekDateString) ;
-    let store = this.get('store') ;
-    let weekDays = this.get('week.days') ;
+  weekDays: computed('week.days', function() {
+    let weekDateString = get(this, 'week.momentWeek').format('YYYY-MM-DD');
+    let weekDay = moment(weekDateString);
+    let store = get(this, 'store');
+    let weekDays = get(this, 'week.days');
 
-    for (let i = 0; i < 7; i++){
-      if (!this.get('week.days').findBy('id', weekDay.format('YYYY-MM-DD'))) {
-        const newDay = store.createRecord('day', {
+    for (let i = 0; i < 7; i++) {
+      if (!get(this, 'week.days').findBy('id', weekDay.format('YYYY-MM-DD'))) {
+        let newDay = store.createRecord('day', {
           date: new Date(weekDay.format('YYYY-MM-DD')),
           id: weekDay.format('YYYY-MM-DD')
         });
@@ -23,19 +30,19 @@ export default Ember.Component.extend({
         weekDay.add(1, 'day');
       }
     }
-    return this.get('week.days').sortBy('date');
+    return get(this, 'week.days').sortBy('date');
   }),
 
-  prevWeek: Ember.computed('week', function() {
-    return moment(this.get('week.momentWeek')).subtract(1, 'week').week();
+  prevWeek: computed('week', function() {
+    return moment(get(this, 'week.momentWeek')).subtract(1, 'week').week();
   }),
-  nextWeek: Ember.computed('week', function() {
-    return moment(this.get('week.momentWeek')).add(1, 'week').week();
+  nextWeek: computed('week', function() {
+    return moment(get(this, 'week.momentWeek')).add(1, 'week').week();
   }),
-  prevWeekYear: Ember.computed('week', function() {
-    return moment(this.get('week.momentWeek')).subtract(1, 'week').weekYear();
+  prevWeekYear: computed('week', function() {
+    return moment(get(this, 'week.momentWeek')).subtract(1, 'week').weekYear();
   }),
-  nextWeekYear: Ember.computed('week', function() {
-    return moment(this.get('week.momentWeek')).add(1, 'week').weekYear();
+  nextWeekYear: computed('week', function() {
+    return moment(get(this, 'week.momentWeek')).add(1, 'week').weekYear();
   })
 });
