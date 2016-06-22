@@ -122,6 +122,12 @@ body {
   display: block;
   width: 100%;
   position: relative;
+
+  @media (min-width: $grid-desktop-breakpoint) {
+    & > .mdl-grid {
+      margin:30px;
+    }
+  }
 }
 
 .mdl-layout__drawer.is-visible ~ .mdl-layout__content.mdl-layout__content {

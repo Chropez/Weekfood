@@ -1,3 +1,4 @@
+// sass-lint:ignore clean-import-paths
 @import "_color-definitions";
 
 // $color-primary:"200,71,39";
@@ -14,5 +15,8 @@ $color-primary-dark: "2,127,141";
 @import 'utils';
 @import 'sign-in';
 @import 'recipes';
-@import 'components/wf-nav';
 @import 'forms';
+
+// Components
+@import 'components/wf-nav';
+@import 'components/wf-nav-subheader';

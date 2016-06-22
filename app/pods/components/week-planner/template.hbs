@@ -1,1 +1,9 @@
-{{yield}}
+{{#each weekDays as |day|}}
+  {{#if day.date}}
+    {{link-to day.date 'calendar.day' day}} of {{day.user.displayName}}
+    <br>
+  {{else}}
+    {{link-to day 'calendar.day' day}}
+    <br>
+  {{/if}}
+{{/each}}

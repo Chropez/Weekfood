@@ -1,8 +1,22 @@
 {{wf-nav-header title="Calendar"}}
 {{#wf-content}}
-  {{#week-planner week=model as |day|}}
-  {{year}} - {{week}}
-  {{/week-planner}}
+  {{#wf-nav-subheader}}
+    <div class="wf-nav-subheader-title">
+      <div class="">
+        {{mdl-button icon='keyboard_arrow_left' action=(route-action 'goToWeek' prevWeekYear prevWeek)}}
+          Week {{week}}
+        {{mdl-button icon='keyboard_arrow_right' action=(route-action 'goToWeek' nextWeekYear nextWeek)}}
+      </div>
+    </div>
+  {{/wf-nav-subheader}}
+
+  {{#week-planner days=days year=year week=week}}{{/week-planner}}
+
+  <hr>
+
+  {{#each days as |day|}}
+      {{day.date}} <br>
+  {{/each}}
   {{!-- {{#week-plan week=model as |weekPlanner|}}
     {{#link-to 'calendar.week' weekPlanner.prevWeekYear weekPlanner.prevWeek}}Previous{{/link-to}}
     {{#link-to 'calendar.week' weekPlanner.nextWeekYear weekPlanner.nextWeek}}Next{{/link-to}}

@@ -7,6 +7,7 @@ const {
 } = Ember;
 
 export default Component.extend({
+  classNames: 'recipe-editor',
   store: service(),
   session: service(),
 

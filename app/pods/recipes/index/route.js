@@ -7,9 +7,11 @@ const {
 
 export default Route.extend({
   model() {
-    let store  = get(this, 'store');
     let userId = get(this, 'session.currentUser.id');
-    return store.query('recipe', { orderBy: 'author', equalTo: userId });
+    return this.store.query('recipe', {
+      orderBy: 'author',
+      equalTo: userId
+    });
   },
   actions: {
     goToAddRecipe() {

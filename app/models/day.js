@@ -16,7 +16,7 @@ const {
 } = DS;
 
 export default Model.extend({
-  date: attr('date'),
+  date: attr('string'),
   recipe: belongsTo(),
   user: belongsTo(),
 

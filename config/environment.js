@@ -6,14 +6,20 @@ module.exports = function(environment) {
     podModulePrefix: 'weekfood/pods',
     environment: environment,
     contentSecurityPolicy: {
-      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com https://*.googleapis.com",
       'default-src': "https://s-dal5-nss-20.firebaseio.com/",
       'font-src': "'self' http://fonts.gstatic.com/",
       'img-src': "*",//"'self' http://**/* https://**/* https://lh5.googleusercontent.com https://scontent.xx.fbcdn.net",
-      'script-src': "'self' 'unsafe-eval' https://s-dal5-nss-20.firebaseio.com",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com"
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'frame-src': "self' https://*.firebaseapp.com"
     },
-    firebase: 'https://sizzling-fire-1482.firebaseio.com/',
+    firebase: {
+      // apiKey: '',
+      authDomain: 'sizzling-fire-1482.firebaseapp.com',
+      databaseURL: 'https://sizzling-fire-1482.firebaseio.com/',
+      storageBucket: 'sizzling-fire-1482.appspot.com'
+    },
     torii: {
       sessionServiceName: 'session'
     },
@@ -32,6 +38,9 @@ module.exports = function(environment) {
     },
     sassOptions: {
       includePaths: ['bower_components/material-design-lite/src']
+    },
+    moment: {
+      outputFormat: 'YYYY-MM-DD'
     }
   };
 

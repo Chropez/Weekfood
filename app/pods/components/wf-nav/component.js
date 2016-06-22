@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import MdlNav from 'ember-material-lite/components/mdl-nav';
-
+import moment from 'moment';
 const {
+  computed,
   inject: { service },
   get
 } = Ember;
@@ -11,6 +12,12 @@ export default MdlNav.extend({
   wfNav: service(),
 
   title: 'Weekfood',
+  week: computed(() => {
+    return moment().isoWeek();
+  }),
+  year: computed(() => {
+    return moment().isoWeekYear();
+  }),
 
   // mdlNav settings
   fixedDrawer: true,

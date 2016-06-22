@@ -18,7 +18,7 @@ router.map(function() {
 
   this.authenticatedRoute('calendar', {}, function() {
     this.authenticatedRoute('week', { path: ':year/week/:week' });
-    this.authenticatedRoute('date', { path: ':date' });
+    this.authenticatedRoute('day', { path: ':date' });
   });
   this.authenticatedRoute('day');
 });

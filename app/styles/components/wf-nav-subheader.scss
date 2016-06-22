@@ -1,0 +1,23 @@
+.wf-nav-subheader {
+  display: flex;
+  min-height: 60px;
+  background: white;
+  color: $primary-text-color;
+  width: 100%;
+
+  .wf-nav-subheader-title {
+    font-size: 20px;
+    line-height: 2;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+
+    @media(max-width: $layout-screen-size-threshold) {
+      justify-content: center;
+    }
+  }
+
+  .mdl-button {
+    color: $primary-text-color;
+  }
+}

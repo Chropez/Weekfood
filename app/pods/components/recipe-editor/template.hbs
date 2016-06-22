@@ -1,52 +1,49 @@
-<div class="mdl-grid mdl-cell--12-col">
-  <div class="mdl-cell mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
-      <div>
-        {{mdl-textfield label="Name" value=recipe.name isLabelFloating=true}}
-      </div>
-      <div>
-        {{wf-mdl-textarea label="Description" value=recipe.description rows=5}}
-      </div>
-      <div>
-        {{mdl-textfield label="Time to make" value=recipe.cookTime}}
-      </div>
-    <div>
-      {{mdl-textfield label="Servings" value=recipe.servings}}
-    </div>
-
-    <div>
-      {{mdl-textfield label="Link to Image" value=recipe.imageUrl}}
-    </div>
-
-    {{#if recipe.imageUrl}}
-        <div id="image-preview"
-             style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')">
-        </div>
-    {{/if}}
-
-    {{!-- Ingredients --}}
-    <div class="mdl-card__title">
-      <h3 class="mdl-card__title-text">Ingredients</h3>
-    </div>
-    <div class="mdl-card__supporting-text">
-      {{wf-mdl-textarea label="Ingredients" value=recipe.ingredients rows=10 placeholder="\nExample:\n2 eggs\n3 dl water"}}
-    </div>
-
-    {{!-- {{ingredient-viewer recipe.ingredients}} --}}
-    {{!-- Instructions --}}
-    <div class="mdl-card__title">
-      <h3 class="mdl-card__title-text">Instructions</h3>
-    </div>
-
-    <div class="mdl-card__supporting-text">
-      {{wf-mdl-textarea label="Instructions" value=recipe.instructions rows=10 placeholder="\nExample:\n1. Preheat oven to 225 degrees\n2. Boil the water"}}
-      <div>
-        {{!-- {{md-text text=recipe.instructions}} --}}
-      </div>
-    </div>
-
-    {{#mdl-card-actions classNames="p15"}}
-      {{mdl-button text="Save" isRaised=true action="addRecipe"}}
-      <!-- {{mdl-button text="Cancel"}} -->
-    {{/mdl-card-actions}}
+<div class="recipe-editor-content">
+  <div>
+    {{mdl-textfield label="Name" value=recipe.name isLabelFloating=true}}
   </div>
+  <div>
+    {{wf-mdl-textarea label="Description" value=recipe.description rows=5}}
+  </div>
+  <div>
+    {{mdl-textfield label="Time to make" value=recipe.cookTime}}
+  </div>
+  <div>
+    {{mdl-textfield label="Servings" value=recipe.servings}}
+  </div>
+  <div>
+    {{mdl-textfield label="Link to Image" value=recipe.imageUrl}}
+  </div>
+
+  {{#if recipe.imageUrl}}
+      <div id="image-preview"
+           style="background-image: url('{{if recipe.imageUrl recipe.imageUrl defaultImageUrl}}')">
+      </div>
+  {{/if}}
+
+  {{!-- Ingredients --}}
+  <div class="mdl-card__title">
+    <h3 class="mdl-card__title-text">Ingredients</h3>
+  </div>
+  <div class="mdl-card__supporting-text">
+    {{wf-mdl-textarea label="Ingredients" value=recipe.ingredients rows=10 placeholder="\nExample:\n2 eggs\n3 dl water"}}
+  </div>
+
+  {{!-- {{ingredient-viewer recipe.ingredients}} --}}
+  {{!-- Instructions --}}
+  <div class="mdl-card__title">
+    <h3 class="mdl-card__title-text">Instructions</h3>
+  </div>
+
+  <div class="mdl-card__supporting-text">
+    {{wf-mdl-textarea label="Instructions" value=recipe.instructions rows=10 placeholder="\nExample:\n1. Preheat oven to 225 degrees\n2. Boil the water"}}
+    <div>
+      {{!-- {{md-text text=recipe.instructions}} --}}
+    </div>
+  </div>
+
+  {{#mdl-card-actions classNames="p15"}}
+    {{mdl-button text="Save" isRaised=true action="addRecipe"}}
+    <!-- {{mdl-button text="Cancel"}} -->
+  {{/mdl-card-actions}}
 </div>
