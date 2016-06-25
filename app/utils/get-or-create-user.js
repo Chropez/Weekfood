@@ -25,21 +25,27 @@ export default function getOrCreateUser(authData, store) {
 
 function extractUserProperties(authData) {
   let name = 'Unknown';
-  let { provider } = authData;
-  let userData = authData[provider];
-  let avatar = userData.profileImageURL;
+  let { providerData: [userData] } = authData;
+  let {
+    photoURL,
+    displayName,
+    username,
+    email
+  } = userData;
 
-  if (userData.displayName) {
-    name = userData.displayName;
-  } else if (userData.username) {
-    name = userData.username;
+  let { uid } = authData;
+
+  if (displayName) {
+    name = displayName;
+  } else if (username) {
+    name = username;
   }
 
   return {
-    id: authData.uid,
+    id: uid,
     displayName: name,
-    email: !isEmpty(userData.email) ? userData.email : null,
-    avatar
+    email: !isEmpty(email) ? email : null,
+    avatar: photoURL
   };
 }
 

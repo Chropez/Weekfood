@@ -15,10 +15,10 @@ module.exports = function(environment) {
       'frame-src': "self' https://*.firebaseapp.com"
     },
     firebase: {
-      // apiKey: '',
-      authDomain: 'sizzling-fire-1482.firebaseapp.com',
-      databaseURL: 'https://sizzling-fire-1482.firebaseio.com/',
-      storageBucket: 'sizzling-fire-1482.appspot.com'
+      apiKey: "AIzaSyB8pjt6NO6Y6n-fGsaDiYtk8CUYEy5KW3Q",
+      authDomain: "sizzling-fire-1482.firebaseapp.com",
+      databaseURL: "https://sizzling-fire-1482.firebaseio.com",
+      storageBucket: "sizzling-fire-1482.appspot.com"
     },
     torii: {
       sessionServiceName: 'session'

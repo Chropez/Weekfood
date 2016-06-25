@@ -1,17 +1,22 @@
 import Ember from 'ember';
+import getOrCreateUser from '../../utils/get-or-create-user';
 
 const {
+  get,
   Route,
+  RSVP: { reject },
   set
 } = Ember;
 
 export default Route.extend({
 
   beforeModel() {
-    return this.get('session')
+    return get(this, 'session')
       .fetch()
+      .then((data) => {
+        this.setSessionUser(get(this, 'session.currentUser'));
+      })
       .catch(() => {
-        // not logged in
         this.transitionTo('sign-in');
       });
   },
@@ -21,15 +26,22 @@ export default Route.extend({
     set(this, 'controller.showDefaultHeader', true);
   },
 
+  setSessionUser(currentUser) {
+    return getOrCreateUser(currentUser, this.store).then((user) => {
+      set(this, 'session.content.currentUser', user);
+    });
+  },
+
   actions: {
     signIn(provider) {
       this.get('session')
         .open('firebase', {
           provider
         })
-        .then(() => {
-          this.transitionTo('recipes');
+        .then((data) => {
+          this.setSessionUser(data.currentUser);
         });
+      this.transitionTo('recipes');
     },
 
     signOut() {
