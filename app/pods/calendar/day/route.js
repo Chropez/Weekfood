@@ -12,7 +12,7 @@ export default Route.extend({
     let userId = get(this, 'session.currentUser.id');
     let equalTo = formatUserDateKey(userId, day);
 
-    return this.store.findAll('day', {
+    return this.store.query('day', {
       orderBy: '_userDateKey',
       equalTo
     });

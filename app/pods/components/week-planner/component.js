@@ -9,6 +9,8 @@ const {
 } = Ember;
 
 export default Component.extend({
+  classNames: 'week-planner',
+
   weekDays: computed('year', 'week', 'days.[]', function() {
     let year = get(this, 'year');
     let isoWeek = get(this, 'week');
@@ -26,5 +28,15 @@ export default Component.extend({
       dayOfWeek.add(1, 'day');
     }
     return weekDays;
-  })
+  }),
+
+  actions: {
+    getDate(day) {
+      return typeof day === 'string' ? day : get(day, 'date');
+    },
+
+    getWeekDay(date) {
+      return moment(date).format('dddd');
+    }
+  }
 });

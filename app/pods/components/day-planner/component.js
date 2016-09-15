@@ -33,10 +33,10 @@ export default Component.extend({
   }),
 
   didDestroyElement(...args) {
-    this._super(...args);
     if (get(this, 'currentDay.isNew')) {
       get(this, 'currentDay').destroy();
     }
     get(this, 'currentDay').rollbackAttributes();
+    this._super(...args);
   }
 });

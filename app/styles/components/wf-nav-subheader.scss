@@ -11,10 +11,7 @@
     width: 100%;
     padding: 10px 0;
     display: flex;
-
-    @media(max-width: $layout-screen-size-threshold) {
-      justify-content: center;
-    }
+    justify-content: center;
   }
 
   .mdl-button {

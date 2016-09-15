@@ -10,24 +10,5 @@
     </div>
   {{/wf-nav-subheader}}
 
-  {{#week-planner days=days year=year week=week}}{{/week-planner}}
-
-  <hr>
-
-  {{#each days as |day|}}
-      {{day.date}} <br>
-  {{/each}}
-  {{!-- {{#week-plan week=model as |weekPlanner|}}
-    {{#link-to 'calendar.week' weekPlanner.prevWeekYear weekPlanner.prevWeek}}Previous{{/link-to}}
-    {{#link-to 'calendar.week' weekPlanner.nextWeekYear weekPlanner.nextWeek}}Next{{/link-to}}
-
-    <h1>Week {{week.weekNumber}}</h1>
-
-    {{#each weekPlanner.weekDays as |day|}}
-      {{#week-day day=day}}
-      {{/week-day}}
-    {{/each}}
-
-    {{outlet}}
-  {{/week-plan}} --}}
+  {{week-planner days=days year=year week=week}}
 {{/wf-content}}

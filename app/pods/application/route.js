@@ -4,7 +4,6 @@ import getOrCreateUser from '../../utils/get-or-create-user';
 const {
   get,
   Route,
-  RSVP: { reject },
   set
 } = Ember;
 
@@ -14,7 +13,7 @@ export default Route.extend({
     return get(this, 'session')
       .fetch()
       .then((data) => {
-        this.setSessionUser(get(this, 'session.currentUser'));
+        return this.setSessionUser(get(this, 'session.currentUser'), data);
       })
       .catch(() => {
         this.transitionTo('sign-in');
@@ -40,8 +39,8 @@ export default Route.extend({
         })
         .then((data) => {
           this.setSessionUser(data.currentUser);
+          this.transitionTo('recipes');
         });
-      this.transitionTo('recipes');
     },
 
     signOut() {

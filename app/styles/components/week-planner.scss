@@ -1,0 +1,44 @@
+.week-planner {
+  margin-top: 30px;
+  .day-content {
+    font-size: 16px;
+    color: $secondary-text-color;
+
+    // mobile view
+    @media(max-width: $grid-desktop-breakpoint - 1) {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    // desktop
+    @media(min-width: $grid-desktop-breakpoint) {
+      &.mdl-cell {
+        margin-top: 10px;
+      }
+
+      padding-right: 20px;
+      text-align: right;
+    }
+  }
+
+  .day-weekday {
+    font-weight: bold;
+  }
+
+  .day-weekday, .day-date {
+    display: inline-block;
+
+    @media(min-width: $grid-desktop-breakpoint) {
+      display: block;
+    }
+  }
+
+  .mdl-grid {
+    padding: 0px 8px;
+  }
+
+  .mdl-card {
+    min-height: 80px;
+  }
+
+}

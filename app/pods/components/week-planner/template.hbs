@@ -1,9 +1,19 @@
 {{#each weekDays as |day|}}
-  {{#if day.date}}
-    {{link-to day.date 'calendar.day' day}} of {{day.user.displayName}}
-    <br>
-  {{else}}
-    {{link-to day 'calendar.day' day}}
-    <br>
-  {{/if}}
+  {{#with (compute (action "getDate" day)) as |date|}}
+    <div class="mdl-grid">
+      <div class="day-content mdl-cell mdl-cell--2-col">
+        <div class="day-weekday">{{compute (action "getWeekDay" date)}}</div>
+        <div class="day-date">{{date}}</div>
+      </div>
+      <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col">
+        {{#if day.date}}
+          {{link-to day.date "calendar.day" day}} of {{day.user.displayName}}
+          <br>
+        {{else}}
+          {{link-to day "calendar.day" day}}
+          <br>
+        {{/if}}
+      </div>
+    </div>
+  {{/with}}
 {{/each}}
