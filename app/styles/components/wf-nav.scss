@@ -46,9 +46,16 @@
   .mdl-navigation__link {
     padding: 10px 30px;
   }
+  .mdl-navigation__link {
+    color: $primary-text-color;
+    
+    &.active {
+      color: $primary-color-text;
+      background-color: $primary-color;
+    }
+  }
 
   .mdl-navigation__link .icon.material-icons {
-    position: relative;
-    top: 6px;
+    margin-right: 10px;
   }
 }

@@ -1,9 +1,19 @@
+/*Material Icons css*/
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
 // sass-lint:ignore clean-import-paths
 @import "_color-definitions";
 
-// $color-primary:"200,71,39";
-// $color-accent: "255,64,129";
-// $color-primary-dark: "140,35,9";
 $color-primary:"0,188,212";
 $color-accent: "255,64,129";
 $color-primary-dark: "2,127,141";
