@@ -50,7 +50,7 @@
     "ember-route-action-helper": "2.0.0",
     "ember-suave": "4.0.0",
     "ember-truth-helpers": "1.2.0",
-    "emberfire": "2.0.0",
+    "emberfire": "2.0.1",
     "loader.js": "^4.0.1",
     "torii": "0.8.0"
   }
