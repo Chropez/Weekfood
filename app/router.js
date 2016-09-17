@@ -2,10 +2,14 @@ import Ember from 'ember';
 import config from './config/environment';
 
 const { Router } = Ember;
-const { locationType } = config;
+const {
+  locationType,
+  rootURL
+} = config;
 
 const router = Router.extend({
-  location: locationType
+  location: locationType,
+  rootURL
 });
 
 router.map(function() {

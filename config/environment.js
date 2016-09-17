@@ -23,7 +23,7 @@ module.exports = function(environment) {
     torii: {
       sessionServiceName: 'session'
     },
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -35,9 +35,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-    sassOptions: {
-      includePaths: ['bower_components/material-design-lite/src']
     },
     moment: {
       outputFormat: 'YYYY-MM-DD'
@@ -54,7 +51,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter

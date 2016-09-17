@@ -1,14 +1,14 @@
 import Ember from 'ember';
 
 const {
-  Handlebars: { SafeString }
+  String: { htmlSafe }
 } = Ember;
 
 export function safestringBgimage([bgImage]) {
   if (!bgImage) {
-    return new SafeString('');
+    return htmlSafe('');
   }
-  return new SafeString(`background-image: url('${bgImage}')`);
+  return htmlSafe(`background-image: url('${bgImage}')`);
 }
 
 export default Ember.Helper.helper(safestringBgimage);

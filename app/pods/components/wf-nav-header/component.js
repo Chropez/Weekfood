@@ -9,7 +9,7 @@ const {
     notEmpty
   },
   get,
-  Handlebars: { SafeString },
+  String: { htmlSafe },
   inject: { service },
   isEmpty
 } = Ember;
@@ -35,9 +35,9 @@ export default Component.extend({
   style: computed('bgImage', function() {
     let bgImage = get(this, 'bgImage');
     if (isEmpty(bgImage)) {
-      return new SafeString('');
+      return htmlSafe('');
     }
-    return new SafeString(`background-image: url('${bgImage}')`);
+    return htmlSafe(`background-image: url('${bgImage}')`);
   }),
 
   showDrawerButton: equal('buttonIcon', 'menu'),
