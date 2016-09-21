@@ -5,15 +5,42 @@
         <div class="day-weekday">{{compute (action "getWeekDay" date)}}</div>
         <div class="day-date">{{date}}</div>
       </div>
-      <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--8-col">
-        {{#if day.date}}
-          {{link-to day.date "calendar.day" day}} of {{day.user.displayName}}
-          <br>
+
+      {{#mdl-card class="mdl-shadow--2dp mdl-cell mdl-cell--9-col mdl-card__day" }}
+        {{#link-to "calendar.day" day class="mdl-card__supporting-text" }}
+          {{#if day.recipe}}
+            {{!-- @todo: real representation of recipe  --}}
+            <div class="mdl-list">
+              <div class="mdl-list__item">
+                <div class="mdl-list__item-primary-content">
+                  <div style="background-image:url(http://www.restaurantmagazine.com/wp-content/uploads/2012/11/Figaros-Pizza-to-Honor-Veterans-and-Active-Service-Members.jpg)" class="material-icons mdl-list__item-avatar"></div>
+                  <div>
+                    Bryan Cranston
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{else}}
+            Nothing planned.
+          {{/if}}
+        {{/link-to}}
+
+        {{#mdl-card-actions}}
+          {{#mdl-button action=(action "pickRecipe" day)}}Add Recipe{{/mdl-button}}
+        {{/mdl-card-actions}}
+      {{/mdl-card}}
+      {{!-- {{#if day.date}}
+      {{link-to day.date "calendar.day" day}}
         {{else}}
           {{link-to day "calendar.day" day}}
-          <br>
-        {{/if}}
-      </div>
+          {{/if}}
+          <div style= {{safestring-bgimage day.recipe.imageUrl}}>
+          </div> --}}
+
     </div>
   {{/with}}
 {{/each}}
+
+{{#if showRecipePicker}}
+  {{recipe-picker close=(toggle 'showRecipePicker' this)}}
+{{/if}}

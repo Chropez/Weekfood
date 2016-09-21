@@ -1,0 +1,55 @@
+.recipe-picker {
+  &.ember-modal-dialog {
+    position: fixed;
+    @media screen and (max-width:$grid-tablet-breakpoint - 1) {
+      left: 0 !important;
+      right: 0 !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      margin:0  !important;
+    }
+
+    background: white;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    padding:0;
+    box-shadow: none;
+  }
+
+  .mdl-layout__header {
+    display: block;
+  }
+
+  .search-wrapper {
+    display: flex;
+  }
+
+  .search-wrapper .icon {
+    margin-top: 22px;
+    margin-right: 12px;
+  }
+
+  .mdl-layout__content {
+    @media screen and (max-width:$grid-tablet-breakpoint - 1) {
+      overflow: auto;
+    }
+
+    display: block;
+  }
+
+  @media screen and (min-width:$grid-tablet-breakpoint) {
+    &.ember-modal-dialog {
+      margin: auto;
+      box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+      min-width: 280px;
+      min-height: 400px;
+      padding: 1em;
+      width: -moz-fit-content;
+      width: -webkit-fit-content;
+      width: fit-content;
+    }
+
+  }
+}

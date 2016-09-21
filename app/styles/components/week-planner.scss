@@ -38,7 +38,29 @@
   }
 
   .mdl-card {
-    min-height: 80px;
+    min-height: auto;
+  }
+
+  .mdl-list {
+    margin: 0;
+  }
+
+  a.mdl-card__supporting-text {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .mdl-list__item .mdl-list__item-avatar {
+    @extend .ratio-background;
+    background-size: cover;
+    width: 75px;
+    height: 75px;
+  }
+
+  .mdl-card__day {
+    .mdl-card__title {
+      display: none;
+    }
   }
 
 }

@@ -1,3 +1,4 @@
+
 // Utils
 
 .mdl-grid-center-children {
@@ -45,4 +46,13 @@
 
 .p15 {
   padding: 15px;
+}
+
+.ratio-background {
+   height: 100%;
+   width: 100%;
+   background-position: center center;
+   background-color: #108B7F;
+   background-size: contain;
+   background-repeat: no-repeat;
 }

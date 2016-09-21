@@ -27,7 +27,12 @@ $color-primary-dark: "2,127,141";
 @import 'recipes';
 @import 'forms';
 
+// ember-modal-dialog
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 // Components
 @import 'components/wf-nav';
 @import 'components/wf-nav-subheader';
 @import 'components/week-planner';
+@import 'components/recipe-picker';

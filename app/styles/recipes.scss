@@ -12,12 +12,7 @@
    }
 
    .mdl-card__title_image{
-     height: 100%;
-     width: 100%;
-     background-position: center center;
-     background-color: #108B7F;
-     background-size: contain;
-     background-repeat: no-repeat;
+     @extend .ratio-background;
    }
 
 

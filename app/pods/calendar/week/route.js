@@ -25,6 +25,7 @@ export default Route.extend({
     this._super(...arguments);
     let year = params['calendar.week'].year;
     let week = params['calendar.week'].week;
+
     controller.set('year', year);
     controller.set('week', week);
   },

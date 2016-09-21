@@ -5,7 +5,8 @@ const {
   A,
   Component,
   computed,
-  get
+  get,
+  set
 } = Ember;
 
 export default Component.extend({
@@ -37,6 +38,16 @@ export default Component.extend({
 
     getWeekDay(date) {
       return moment(date).format('dddd');
+    },
+
+    pickRecipe(day) {
+      if (typeof day === "string") {
+        set(this, 'showRecipePicker', true);
+        // day doesn't exist
+        // alert(day);
+      } else {
+        alert(get(day, 'date'));
+      }
     }
   }
 });
